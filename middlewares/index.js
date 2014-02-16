@@ -11,13 +11,11 @@ module.exports = function (app) {
 
 	require('./passport')(app);
 
-	app.use(function(req, res, next){
+	app.use(function (req, res, next) {
 		res.locals.user = req.user;
 		res.locals.session = req.session;
 		res.locals.request = req;
 		res.locals.response = res;
 		next();
 	});
-
-	require('./roles')(app);
 };
