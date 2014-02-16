@@ -18,4 +18,11 @@ module.exports = function (app) {
 		res.locals.response = res;
 		next();
 	});
+
+	app.use(app.router);
+
+	app.use(function (err, req, res, next) {
+		console.error(err.stack);
+		res.render('500');
+	});
 };

@@ -3,6 +3,7 @@ module.exports = function (app) {
 		GoogleStrategy = require('passport-google').Strategy;
 
 	passport.use(new GoogleStrategy({
+			// defaults, must be overridden in routes
 			returnURL: 'http://localhost/auth/google/return',
 			realm: 'http://localhost',
 			passReqToCallback: true
