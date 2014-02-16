@@ -11,4 +11,4 @@ require('./models')(app);
 require('./middlewares')(app);
 require('./routes')(app);
 
-app.listen(80);
+app.listen(process.env.PORT || 80);
