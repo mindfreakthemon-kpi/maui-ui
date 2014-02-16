@@ -8,6 +8,7 @@ lib-cov
 *.gz
 *.iws
 *.ipr
+*.rdb
 
 pids
 logs

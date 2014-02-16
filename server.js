@@ -1,6 +1,9 @@
-var app = require('express.io')();
+var fs = require('fs'),
+	app = require('express.io')();
 
-app.http().io();
+app
+	.http()
+	.io();
 
 app.set('domain', 'localhost');
 app.set('views', 'views');
