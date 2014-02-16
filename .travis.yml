@@ -1,14 +1,13 @@
 language: node_js
-threadsafe: yes
+threadsafe: true
 node_js:
-  - "0.10"
+- '0.10'
 before_script:
-  - npm install -g grunt-cli
+- npm install -g grunt-cli
 deploy:
   provider: heroku
   api_key:
-    secure: OButxbVwz+qS5LB5VEnw6rbZ5vxRnhv23yK1/NQbQ4unLC5VwdRb93YQScevwK51jitt48HlfZHyU96w8QQExGK67W/08kwBpCvowXD9XE6oQG+4tcNZzOXWGKh8Au0DG9O5V5BaEUyySNsONIzuI7XmZ7d8eeHo4KatrraGyIk=
-  skip_cleanup: true
+    secure: eQlJqVK+vahFoS2DUmmNXyjxGZbU93uxYwV7sz1W3BcRWYa7J2LA+JkymFpj9lXJDBGMSy75BWryanhI1ZuAdTLxWYtLGXscAB/U5xp42RJG/ENAiPZ/crXAj2XkvoLLAOsXV8qeCU7Gus4W7QCw42V+Ca9SOg5U8digdcIhXW8=
   app: miui-ui
   on:
     repo: mindfreakthemon/miui-ui
