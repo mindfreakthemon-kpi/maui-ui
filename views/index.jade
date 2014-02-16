@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	if user
+		| Hello #{user.name()} &nbsp;
+		a(href='/logout') Logout
+	else
+		| Hello guest &nbsp;
+		a(href='/login') Login
+		= console.log(request.user)

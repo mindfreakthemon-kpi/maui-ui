@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	div: a(href='/auth/google') Login with google
+	div
+		= request.cookies.test
+	div
+		= request.signedCookies.test1
+
+	div
+		h1 LDAP Login
+		form(action='/auth/ldap', method='POST')
+			input(type='text', name='username', placeholder='Username')
+			| &nbsp;
+			input(type='password', name='password', placeholder='Password')
+			| &nbsp;
+			input(type='submit')
