@@ -4,9 +4,9 @@ module.exports = function (app) {
 	app.use(express.json());
 	app.use(express.query());
 	app.use(express.urlencoded());
-	app.use(express.cookieParser('TEST'));
+	app.use(express.cookieParser(app.get('cookie secret')));
 	app.use(express.session({
-		secret: 'TEST'
+		secret: app.get('session secret')
 	}));
 
 	require('./passport')(app);

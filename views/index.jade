@@ -3,6 +3,7 @@ extends layout
 block content
 	if user
 		| Hello #{user.name()} &nbsp;
+		a(href='/params') Params
 		a(href='/logout') Logout
 	else
 		| Hello guest &nbsp;
