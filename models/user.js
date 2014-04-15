@@ -123,4 +123,44 @@ module.exports = function (app) {
 	};
 
 	app.set('models:User', User);
+
+	app.set('middlewares:logged-in', function (url) {
+		return function (req, res, next) {
+			if (!req.user) {
+				if (req.session) {
+					req.session.returnTo = req.originalUrl || req.url;
+				}
+
+				res.redirect(url);
+				return;
+			}
+
+			next();
+		};
+	});
+
+	app.set('middlewares:logged-out', function (url) {
+		return function (req, res, next) {
+			if (req.user) {
+				res.redirect(url);
+				return;
+			}
+
+			next();
+		};
+	});
+
+	app.set('middlewares:logged-to', function (url) {
+		return function (req, res) {
+			if (req.session && req.session.returnTo) {
+				res.redirect(req.session.returnTo);
+
+				delete req.session.returnTo;
+
+				return;
+			}
+
+			res.redirect(url);
+		};
+	});
 };

@@ -11,9 +11,10 @@ module.exports = function (app) {
 
 	app.get('/auth/google/return',
 		passport.authenticate('google', {
-			successRedirect: '/',
+			// successRedirect: '/',
 			failureRedirect: '/login'
-		}));
+		}),
+		app.get('middlewares:logged-to')('/'));
 
 //	app.post('/auth/ldap',
 //		passport.authenticate('ldapauth', {
@@ -21,12 +22,16 @@ module.exports = function (app) {
 //			failureRedirect: '/login'
 //		}));
 
-	app.get('/login', function (req, res) {
-		res.render('login');
-	});
+	app.get('/login',
+		app.get('middlewares:logged-out')('/'),
+		function (req, res) {
+			res.render('login');
+		});
 
-	app.get('/logout', function (req, res) {
-		req.logout();
-		res.redirect('/');
-	});
+	app.get('/logout',
+		app.get('middlewares:logged-in')('/login'),
+		function (req, res) {
+			req.logout();
+			res.redirect('/');
+		});
 };

@@ -14,5 +14,6 @@ module.exports = function (app) {
 	app.use(passport.initialize());
 	app.use(passport.session());
 
-	require('../../lib/require_dir')(__dirname, __filename)(app);
+	require('./google')(app);
+	require('./ldap')(app);
 };

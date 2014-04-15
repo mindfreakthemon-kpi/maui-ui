@@ -13,10 +13,12 @@ app.set('backend endpoint', process.env.BACKEND_ENDPOINT || 'http://barabashkast
 app.set('session secret', process.env.SESSION_SECRET || 'test');
 app.set('cookie secret', process.env.COOKIE_SECRET || 'test');
 
-require('./databases')(app);
-require('./models')(app);
-require('./middlewares')(app);
-require('./routes')(app);
-require('./lib/api')(app);
+require('./lib/require')(app);
+
+app.require('./databases');
+app.require('./models');
+app.require('./middlewares');
+app.require('./routes');
+app.require('./lib/api');
 
 app.listen(process.env.PORT || 80);
