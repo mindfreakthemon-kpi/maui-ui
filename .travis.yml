@@ -7,7 +7,7 @@ before_script:
 deploy:
   provider: heroku
   api_key:
-    secure: eQlJqVK+vahFoS2DUmmNXyjxGZbU93uxYwV7sz1W3BcRWYa7J2LA+JkymFpj9lXJDBGMSy75BWryanhI1ZuAdTLxWYtLGXscAB/U5xp42RJG/ENAiPZ/crXAj2XkvoLLAOsXV8qeCU7Gus4W7QCw42V+Ca9SOg5U8digdcIhXW8=
-  app: miui-ui
+    secure: 44foKggRvQcobtbMNS/ZXiTm2xwgj2Ihfj8kkDUDkIorSmX5RbjCke6VWX9kWkkrqmVciKIHbazS+/vD984/oRJ1xBA6YJM+C3XfZWLKcWnrGeHFT0sYo2R/cX/9Q79LbruzryLYKJtoG8I57nb8iwYDeijqGHhlU76ZbOp7K3g=
+  app: maui-ui
   on:
-    repo: mindfreakthemon/miui-ui
+    repo: HPC-Web/maui-ui
