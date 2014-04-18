@@ -124,14 +124,15 @@ module.exports = function (app) {
 
 	app.set('models:User', User);
 
-	app.set('middlewares:logged-in', function (url) {
+	app.set('middlewares:logged-in', function (url, params) {
 		return function (req, res, next) {
 			if (!req.user) {
 				if (req.session) {
 					req.session.returnTo = req.originalUrl || req.url;
 				}
 
-				res.redirect(url);
+				res.redirect(
+					app.reverse(url, params));
 				return;
 			}
 
@@ -139,10 +140,11 @@ module.exports = function (app) {
 		};
 	});
 
-	app.set('middlewares:logged-out', function (url) {
+	app.set('middlewares:logged-out', function (url, params) {
 		return function (req, res, next) {
 			if (req.user) {
-				res.redirect(url);
+				res.redirect(
+					app.reverse(url, params));
 				return;
 			}
 
@@ -150,7 +152,7 @@ module.exports = function (app) {
 		};
 	});
 
-	app.set('middlewares:logged-to', function (url) {
+	app.set('middlewares:logged-to', function (url, params) {
 		return function (req, res) {
 			if (req.session && req.session.returnTo) {
 				res.redirect(req.session.returnTo);
@@ -160,7 +162,8 @@ module.exports = function (app) {
 				return;
 			}
 
-			res.redirect(url);
+			res.redirect(
+				app.reverse(url, params));
 		};
 	});
 };

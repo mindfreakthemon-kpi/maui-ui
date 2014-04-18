@@ -14,7 +14,7 @@ module.exports = function (app) {
 			// successRedirect: '/',
 			failureRedirect: '/login'
 		}),
-		app.get('middlewares:logged-to')('/'));
+		app.get('middlewares:logged-to')('home'));
 
 //	app.post('/auth/ldap',
 //		passport.authenticate('ldapauth', {
@@ -22,14 +22,14 @@ module.exports = function (app) {
 //			failureRedirect: '/login'
 //		}));
 
-	app.get('/login',
-		app.get('middlewares:logged-out')('/'),
+	app.get('login', '/login',
+		app.get('middlewares:logged-out')('home'),
 		function (req, res) {
 			res.render('login');
 		});
 
-	app.get('/logout',
-		app.get('middlewares:logged-in')('/login'),
+	app.get('logout', '/logout',
+		app.get('middlewares:logged-in')('login'),
 		function (req, res) {
 			req.logout();
 			res.redirect('/');

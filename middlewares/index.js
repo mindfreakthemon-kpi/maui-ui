@@ -22,11 +22,15 @@ module.exports = function (app) {
 	app.use(app.router);
 
 	app.use(function (req, res) {
-		res.render('400');
+		res.render('error', {
+			code: 404
+		});
 	});
 
 	app.use(function (err, req, res, next) {
 		console.error(err.stack);
-		res.render('500');
+		res.render('error', {
+			code: 500
+		});
 	});
 };

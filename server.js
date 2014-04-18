@@ -10,10 +10,12 @@ app.set('views', 'views');
 app.set('view engine', 'jade');
 
 app.set('backend endpoint', process.env.BACKEND_ENDPOINT || 'http://barabashkastuff.com:8888/rest/maui/');
+app.set('backend offline', true);
 app.set('session secret', process.env.SESSION_SECRET || 'test');
 app.set('cookie secret', process.env.COOKIE_SECRET || 'test');
 
 require('./lib/require')(app);
+require('./lib/reversible')(app);
 
 app.require('./databases');
 app.require('./models');
