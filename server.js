@@ -9,8 +9,8 @@ app.set('domain', 'localhost');
 app.set('views', 'views');
 app.set('view engine', 'jade');
 
-app.set('backend endpoint', process.env.BACKEND_ENDPOINT || 'http://barabashkastuff.com:8888/rest/maui/');
-app.set('backend offline', true);
+app.set('backend endpoint', process.env.BACKEND_ENDPOINT || 'http://localhost:8080/rest/maui/');
+app.set('backend offline', process.env.BACKEND_OFFLINE);
 app.set('session secret', process.env.SESSION_SECRET || 'test');
 app.set('cookie secret', process.env.COOKIE_SECRET || 'test');
 

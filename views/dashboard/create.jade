@@ -2,6 +2,7 @@ extends ../layout
 
 block content
 	form(action='', method='POST')
+		input(type='hidden', name='type', value='simple')
 		each param in params
 			.field
 				label

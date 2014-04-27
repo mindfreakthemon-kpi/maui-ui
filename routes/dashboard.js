@@ -26,7 +26,7 @@ module.exports = function (app) {
 			app.api.getParams('simple',
 				function (error, response, json) {
 					res.render('dashboard/create', {
-						params: error ? [] : json.param
+						params: error ? [] : json.parameters
 					});
 				});
 		});
