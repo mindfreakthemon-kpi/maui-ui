@@ -1,32 +1,34 @@
 {
-  "name": "castle-of-glass",
+  "name": "maui-ui",
   "version": "0.0.1",
-  "description": "castle-of-glass\r ===============",
+  "description": "maui-ui",
   "main": "server.js",
   "scripts": {
     "test": "grunt test"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mindfreakthemon/castle-of-glass.git"
+    "url": "git://github.com/mindfreakthemon/maui-ui.git"
   },
   "author": "Monday Freelem <mfthemon@gmail.com> (http://middle-of-nowhere.name/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mindfreakthemon/castle-of-glass/issues"
+    "url": "https://github.com/mindfreakthemon/maui-ui/issues"
   },
-  "homepage": "https://github.com/mindfreakthemon/castle-of-glass",
+  "homepage": "https://github.com/mindfreakthemon/maui-ui",
   "dependencies": {
     "express.io": "~1.1.13",
     "redis": "~0.10.0",
     "passport": "~0.2.0",
     "passport-google": "~0.3.0",
-    "passport-ldapauth": "~0.2.0",
     "jade": "~1.1.5",
     "nodejs-model": "~0.1.6",
     "node-uuid": "~1.4.1",
     "helmet": "~0.1.2",
     "request": "^2.34.0"
+  },
+  "optionalDependencies": {
+    "passport-ldapauth": "~0.2.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

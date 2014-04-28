@@ -1,6 +1,12 @@
 module.exports = function (app) {
 	var passport = require('passport'),
+		LdapStrategy;
+
+	try {
 		LdapStrategy = require('passport-ldapauth').Strategy;
+	} catch (e) {
+		return;
+	}
 
 	passport.use(new LdapStrategy({
 			server: {
