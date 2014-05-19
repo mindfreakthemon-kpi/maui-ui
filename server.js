@@ -17,7 +17,7 @@ app.set('cookie secret', process.env.COOKIE_SECRET || 'test');
 require('./lib/require')(app);
 require('./lib/reversible')(app);
 
-app.require('./databases');
+app.require('./config');
 app.require('./models');
 app.require('./middlewares');
 app.require('./routes');

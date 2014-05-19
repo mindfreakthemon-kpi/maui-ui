@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="DEFAULT_COMPILER" value="Javac" />
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
+  </component>
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="IdProvider" IDEtalkID="63F689CF680FA59B258F2F803EB15AD6" />
+  <component name="InspectionProjectProfileManager">
+    <profiles>
+      <profile version="1.0" is_locked="false">
+        <option name="myName" value="Project Default" />
+        <option name="myLocal" value="false" />
+        <inspection_tool class="JSHint" enabled="true" level="ERROR" enabled_by_default="true" />
+      </profile>
+    </profiles>
+    <option name="PROJECT_PROFILE" value="Project Default" />
+    <option name="USE_PROJECT_PROFILE" value="true" />
+    <version value="1.0" />
+  </component>
+  <component name="JSHintConfiguration" version="2.3.0" use-config-file="true" default-config-file-path="$PROJECT_DIR$/jshint.json">
+    <option bitwise="true" />
+    <option camelcase="false" />
+    <option curly="true" />
+    <option eqeqeq="true" />
+    <option es3="false" />
+    <option forin="true" />
+    <option freeze="false" />
+    <option immed="false" />
+    <option newcap="false" />
+    <option noarg="true" />
+    <option noempty="true" />
+    <option nonew="true" />
+    <option plusplus="false" />
+    <option undef="true" />
+    <option strict="true" />
+    <option trailing="false" />
+    <option latedef="false" />
+    <option unused="false" />
+    <option quotmark="false" />
+    <option asi="false" />
+    <option boss="false" />
+    <option debug="false" />
+    <option eqnull="false" />
+    <option esnext="false" />
+    <option evil="false" />
+    <option expr="false" />
+    <option funcscope="false" />
+    <option globalstrict="false" />
+    <option iterator="false" />
+    <option lastsemic="false" />
+    <option laxbreak="false" />
+    <option laxcomma="false" />
+    <option loopfunc="false" />
+    <option moz="false" />
+    <option multistr="false" />
+    <option notypeof="false" />
+    <option proto="false" />
+    <option scripturl="false" />
+    <option smarttabs="false" />
+    <option shadow="false" />
+    <option sub="false" />
+    <option supernew="false" />
+    <option validthis="false" />
+    <option browser="true" />
+    <option couch="false" />
+    <option devel="false" />
+    <option dojo="false" />
+    <option jquery="false" />
+    <option mootools="false" />
+    <option node="false" />
+    <option nonstandard="false" />
+    <option phantom="false" />
+    <option prototypejs="false" />
+    <option rhino="false" />
+    <option worker="false" />
+    <option wsh="false" />
+    <option yui="false" />
+    <option nomen="false" />
+    <option onevar="false" />
+    <option passfail="false" />
+    <option white="false" />
+    <option maxerr="50" />
+  </component>
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{Node.js Dependencies for castle-of-glass}" />
+  </component>
+  <component name="ProjectCodeStyleSettingsManager">
+    <option name="PER_PROJECT_SETTINGS">
+      <value>
+        <option name="OTHER_INDENT_OPTIONS">
+          <value>
+            <option name="INDENT_SIZE" value="4" />
+            <option name="CONTINUATION_INDENT_SIZE" value="8" />
+            <option name="TAB_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+            <option name="LABEL_INDENT_SIZE" value="0" />
+            <option name="LABEL_INDENT_ABSOLUTE" value="false" />
+            <option name="USE_RELATIVE_INDENTS" value="false" />
+          </value>
+        </option>
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
+        <codeStyleSettings language="CSS">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="CoffeeScript">
+          <indentOptions>
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="Groovy">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="HTML">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="JAVA">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="JSP">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="JSPX">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="Jade">
+          <indentOptions>
+            <option name="INDENT_SIZE" value="2" />
+            <option name="TAB_SIZE" value="2" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="JavaScript">
+          <indentOptions>
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="LESS">
+          <indentOptions>
+            <option name="INDENT_SIZE" value="4" />
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="Python">
+          <indentOptions>
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="SASS">
+          <indentOptions>
+            <option name="INDENT_SIZE" value="4" />
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="SCSS">
+          <indentOptions>
+            <option name="INDENT_SIZE" value="4" />
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="Stylus">
+          <indentOptions>
+            <option name="INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="TypeScript">
+          <indentOptions>
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+        <codeStyleSettings language="XML">
+          <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
+            <option name="USE_TAB_CHARACTER" value="true" />
+            <option name="SMART_TABS" value="true" />
+          </indentOptions>
+        </codeStyleSettings>
+      </value>
+    </option>
+    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
+    <option name="PREFERRED_PROJECT_CODE_STYLE" value="Customized" />
+  </component>
+  <component name="ProjectKey">
+    <option name="state" value="git@github.com:HPC-Web/maui-ui.git" />
+  </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/maui-ui.iml" filepath="$PROJECT_DIR$/maui-ui.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+  </component>
+  <component name="libraryTable">
+    <library name="Node.js Dependencies for castle-of-glass" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$PROJECT_DIR$/node_modules" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/node_modules" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Node.js v0.10.18 Core Modules" type="javaScript">
+      <properties>
+        <option name="frameworkName" value="Node.js Core Modules" />
+        <option name="frameworkVersion" value="v0.10.18" />
+        <sourceFilesUrls>
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/vm.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_passthrough.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_duplex.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/string_decoder.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/crypto.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/http.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tls.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/timers.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_linklist.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_readable.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_debugger.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/util.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/repl.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/sys.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/domain.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/path.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/buffer.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/child_process.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/console.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/cluster.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/module.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/net.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/os.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/assert.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tty.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/stream.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/url.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_writable.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_transform.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/constants.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/fs.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/freelist.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/events.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/zlib.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/querystring.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/punycode.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/https.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/readline.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dns.js" />
+          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dgram.js" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/vm.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_passthrough.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_duplex.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/string_decoder.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/crypto.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/http.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tls.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/timers.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_linklist.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_readable.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_debugger.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/util.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/repl.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/sys.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/domain.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/path.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/buffer.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/child_process.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/console.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/cluster.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/module.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/net.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/os.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/assert.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tty.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/stream.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/url.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_writable.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_transform.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/constants.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/fs.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/freelist.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/events.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/zlib.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/querystring.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/punycode.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/https.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/readline.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dns.js" />
+        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dgram.js" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+  </component>
+</project>
+

@@ -1,9 +1,9 @@
 language: node_js
 threadsafe: true
 node_js:
-- '0.10'
+  - '0.10'
 before_script:
-- npm install -g grunt-cli
+  - npm install -g grunt-cli
 deploy:
   provider: heroku
   api_key:
