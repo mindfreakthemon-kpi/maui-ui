@@ -9,7 +9,7 @@ module.exports = function (app) {
 		secret: app.get('session secret')
 	}));
 
-	require('./passport')(app);
+	require('./passport/index')(app);
 
 	app.use(function (req, res, next) {
 		res.locals.user = req.user;
