@@ -1,5 +1,4 @@
-var express = require('express.io'),
-	i18n = require('i18n');
+var express = require('express.io');
 
 module.exports = function (app) {
 	app.use(express.json());
