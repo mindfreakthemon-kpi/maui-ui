@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mindfreakthemon/maui-ui.git"
+    "url": "https://github.com/HPC-Web/maui-ui.git"
   },
   "author": "Monday Freelem <mfthemon@gmail.com> (http://middle-of-nowhere.name/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mindfreakthemon/maui-ui/issues"
+    "url": "https://github.com/HPC-Web/maui-ui/issues"
   },
-  "homepage": "https://github.com/mindfreakthemon/maui-ui",
+  "homepage": "http://maui-ui.herokuapp.com/",
   "dependencies": {
     "express.io": "~1.1.13",
     "redis": "~0.10.0",
@@ -25,7 +25,9 @@
     "nodejs-model": "~0.1.6",
     "node-uuid": "~1.4.1",
     "helmet": "~0.1.2",
-    "request": "^2.34.0"
+    "request": "^2.34.0",
+    "express-require": "git://github.com/mindfreakthemon/express-require.git",
+    "express-reversible": "git://github.com/mindfreakthemon/express-reversible.git"
   },
   "optionalDependencies": {
     "passport-ldapauth": "~0.2.0"
