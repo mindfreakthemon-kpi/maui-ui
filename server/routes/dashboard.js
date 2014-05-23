@@ -11,7 +11,7 @@ module.exports = function (app) {
 
 	app.get('dashboard.status', '/dashboard/status/:id',
 		function (req, res) {
-			app.api.getStatus(req.params.id,
+			app.api.get('task', req.params.id,
 				function (error, response, json) {
 					res.render('dashboard/status', {
 						task: {
@@ -23,7 +23,7 @@ module.exports = function (app) {
 
 	app.get('dashboard.create', '/dashboard/create',
 		function (req, res) {
-			app.api.getParams('simple',
+			app.api.get('param/simple',
 				function (error, response, json) {
 					res.render('dashboard/create', {
 						params: error ? [] : json.parameters
@@ -33,7 +33,9 @@ module.exports = function (app) {
 
 	app.post('/dashboard/create',
 		function (req, res) {
-			app.api.makeRequest(req.body,
+			app.api.post('newpostrequest', {
+					request: req.body
+				},
 				function (error, response, json) {
 					res.redirect(
 						app.reverse('dashboard.status', {

@@ -122,8 +122,14 @@ module.exports = function (app) {
 		});
 	};
 
+	/**
+	 * Saving model to apps config
+	 */
 	app.set('models:User', User);
 
+	/**
+	 * For ensuring that user is logged in
+	 */
 	app.set('middlewares:logged-in', function (url, params) {
 		return function (req, res, next) {
 			if (!req.user) {
@@ -140,6 +146,9 @@ module.exports = function (app) {
 		};
 	});
 
+	/**
+	 * For ensuring that user is logged out
+	 */
 	app.set('middlewares:logged-out', function (url, params) {
 		return function (req, res, next) {
 			if (req.user) {

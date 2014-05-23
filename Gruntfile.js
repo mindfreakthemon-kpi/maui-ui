@@ -8,10 +8,7 @@ module.exports = function (grunt) {
 			main: [
 				'Gruntfile.js',
 				'server.js',
-				'config/**/*.js',
-				'middlewares/**/*.js',
-				'models/**/*.js',
-				'routes/**/*.js'
+				'server/**/*.js'
 			]
 		},
 
@@ -25,10 +22,7 @@ module.exports = function (grunt) {
 					ignore: ['node_modules/**'],
 					watch: [
 						'server.js',
-						'config/**/*.js',
-						'middlewares/**/*.js',
-						'models/**/*.js',
-						'routes/**/*.js'
+						'server/**/*.js'
 					]
 				}
 			}
@@ -39,10 +33,7 @@ module.exports = function (grunt) {
 				files: [
 					'Gruntfile.js',
 					'server.js',
-					'config/**/*.js',
-					'middlewares/**/*.js',
-					'models/**/*.js',
-					'routes/**/*.js'
+					'server/**/*.js'
 				],
 				tasks: ['jshint:main']
 			}

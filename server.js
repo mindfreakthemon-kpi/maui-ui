@@ -11,6 +11,6 @@ app.require('./server/config');
 app.require('./server/models');
 app.require('./server/middlewares');
 app.require('./server/routes');
-app.require('./lib/api');
+app.require('./server/api');
 
 app.listen(process.env.PORT || 80);
