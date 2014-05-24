@@ -28,6 +28,33 @@ module.exports = function (grunt) {
 			}
 		},
 
+		clean: ['static/css', 'static/js/templates.js'],
+
+		jade: {
+			templates: {
+				files: {
+					'static/js/templates.js': 'src/jade/**/*.jade'
+				},
+				options: {
+					amd: true,
+					client: true,
+					processName: function (name) {
+						return path.basename(name, '.jade');
+					}
+				}
+			}
+		},
+
+		less: {
+			main: {
+				expand: true,
+				cwd: 'src/less',
+				src: ['**/*.less'],
+				dest: 'static/css',
+				ext: '.css'
+			}
+		},
+
 		watch: {
 			jshint: {
 				files: [
@@ -36,17 +63,45 @@ module.exports = function (grunt) {
 					'server/**/*.js'
 				],
 				tasks: ['jshint:main']
+			},
+
+			templates: {
+				files: ['src/jade/**/*.jade'],
+				tasks: ['jade:templates'],
+				options: {
+					atBegin: true
+				}
+			},
+			less: {
+				files: ['src/less/**/*.less'],
+				tasks: ['less:main'],
+				options: {
+					atBegin: true
+				}
+			},
+			livereload: {
+				files: ['src/**', 'server/views/**'],
+				options: {
+					livereload: true
+				}
+			}
+		},
+
+		concurrent: {
+			watch: {
+				tasks: ['watch:templates', 'watch:less', 'watch:livereload']
 			}
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-//	grunt.loadNpmTasks('grunt-contrib-jade');
-//	grunt.loadNpmTasks('grunt-contrib-connect');
-//	grunt.loadNpmTasks('grunt-concurrent');
+	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-nodemon');
 
 	grunt.registerTask('test', 'jshint');
-	grunt.registerTask('default', []);
+	grunt.registerTask('default', ['concurrent:watch']);
 };

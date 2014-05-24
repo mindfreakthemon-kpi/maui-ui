@@ -1,6 +1,7 @@
 var express = require('express.io');
 
 module.exports = function (app) {
+	app.use('/static', express.static(__dirname + '/../../static/'));
 	app.use(express.json());
 	app.use(express.query());
 	app.use(express.urlencoded());
