@@ -1,7 +1,7 @@
 var passport = require('passport');
 
 module.exports = function (app) {
-	var User = app.get('models:User');
+	var User = app.models.user;
 
 	passport.serializeUser(function (user, done) {
 		done(null, user.id());
@@ -15,5 +15,4 @@ module.exports = function (app) {
 	app.use(passport.session());
 
 	require('./google')(app);
-	require('./ldap')(app);
 };

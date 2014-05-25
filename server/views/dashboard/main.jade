@@ -1,0 +1,7 @@
+extends ../layout
+
+block content
+	h1 Hello #{user.name()} &nbsp;
+	ul
+		li: a(href='/tasks') Tasks
+		li: a(href='/auth/logout') Logout

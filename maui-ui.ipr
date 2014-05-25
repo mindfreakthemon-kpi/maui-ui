@@ -101,7 +101,8 @@
     <option maxerr="50" />
   </component>
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{Node.js Dependencies for castle-of-glass}" />
+    <file url="file://$PROJECT_DIR$" libraries="{maui-ui node_modules}" />
+    <file url="PROJECT" libraries="{Node.js v0.10.28 Core Modules}" />
   </component>
   <component name="ProjectCodeStyleSettingsManager">
     <option name="PER_PROJECT_SETTINGS">
@@ -245,113 +246,22 @@
       <module fileurl="file://$PROJECT_DIR$/maui-ui.iml" filepath="$PROJECT_DIR$/maui-ui.iml" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="Node.js Dependencies for castle-of-glass" type="javaScript">
+    <library name="maui-ui node_modules" type="javaScript">
       <properties>
+        <option name="frameworkName" value="node_modules" />
         <sourceFilesUrls>
           <item url="file://$PROJECT_DIR$/node_modules" />
         </sourceFilesUrls>
       </properties>
       <CLASSES>
         <root url="file://$PROJECT_DIR$/node_modules" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-    </library>
-    <library name="Node.js v0.10.18 Core Modules" type="javaScript">
-      <properties>
-        <option name="frameworkName" value="Node.js Core Modules" />
-        <option name="frameworkVersion" value="v0.10.18" />
-        <sourceFilesUrls>
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/vm.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_passthrough.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_duplex.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/string_decoder.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/crypto.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/http.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tls.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/timers.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_linklist.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_readable.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_debugger.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/util.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/repl.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/sys.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/domain.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/path.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/buffer.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/child_process.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/console.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/cluster.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/module.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/net.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/os.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/assert.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tty.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/stream.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/url.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_writable.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_transform.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/constants.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/fs.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/freelist.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/events.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/zlib.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/querystring.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/punycode.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/https.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/readline.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dns.js" />
-          <item url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dgram.js" />
-        </sourceFilesUrls>
-      </properties>
-      <CLASSES>
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/vm.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_passthrough.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_duplex.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/string_decoder.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/crypto.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/http.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tls.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/timers.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_linklist.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_readable.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_debugger.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/util.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/repl.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/sys.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/domain.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/path.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/buffer.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/child_process.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/console.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/cluster.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/module.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/net.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/os.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/assert.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/tty.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/stream.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/url.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_writable.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/_stream_transform.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/constants.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/fs.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/freelist.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/events.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/zlib.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/querystring.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/punycode.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/https.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/readline.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dns.js" />
-        <root url="file://$USER_HOME$/.IntelliJIdea12/system/extLibs/nodejs-v0.10.18-src/core-modules-sources/lib/dgram.js" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />

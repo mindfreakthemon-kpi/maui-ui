@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+	ol
+		each user in data
+			li #{user.id()}
+				ul
+					li Name: #{user.name()}
+					li Role: #{user.role()}
+					li Creation date: #{user.creationDate()}
+					li Google ID: #{user.googleId()}
+					li LDAP ID: #{user.ldapId()}

@@ -13,5 +13,5 @@ module.exports = function (app) {
 		client = redis.createClient();
 	}
 
-	app.set('databases:redis', client);
+	app.db.redis = client;
 };

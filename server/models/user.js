@@ -2,9 +2,9 @@ var model = require('nodejs-model'),
 	uuid = require('node-uuid');
 
 module.exports = function (app) {
-	var redis = app.get('databases:redis');
+	var redis = app.db.redis;
 
-	var User = model('User')
+	var User = app.models.user = model('User')
 		.attr('id', {
 			tags: ['private']
 		})
@@ -122,57 +122,60 @@ module.exports = function (app) {
 		});
 	};
 
-	/**
-	 * Saving model to apps config
-	 */
-	app.set('models:User', User);
+	User.remove = function (id, done) {
+		var queue = redis.multi();
 
-	/**
-	 * For ensuring that user is logged in
-	 */
-	app.set('middlewares:logged-in', function (url, params) {
-		return function (req, res, next) {
-			if (!req.user) {
-				if (req.session) {
-					req.session.returnTo = req.originalUrl || req.url;
+		queue.del('users:' + id);
+
+		redis.keys('accounts:*:' + id, function (error, keys) {
+			if (error) {
+				done(error);
+				return;
+			}
+
+			if (keys) {
+				keys.forEach(function (key) {
+					queue.del(key);
+				});
+			}
+
+			queue.exec(done);
+		});
+	};
+
+	User.list = function (done) {
+		var queue = redis.multi();
+
+		redis.keys('users:*', function (error, keys) {
+			if (error) {
+				done(error);
+				return;
+			}
+
+			if (keys) {
+				keys.forEach(function (key) {
+					queue.hgetall(key);
+				});
+			}
+
+			queue.exec(function (error, users) {
+				if (error) {
+					done(error);
+					return;
 				}
 
-				res.redirect(
-					app.reverse(url, params));
-				return;
-			}
+				var array = [];
 
-			next();
-		};
-	});
+				users.forEach(function (user) {
+					var instance = User.create();
 
-	/**
-	 * For ensuring that user is logged out
-	 */
-	app.set('middlewares:logged-out', function (url, params) {
-		return function (req, res, next) {
-			if (req.user) {
-				res.redirect(
-					app.reverse(url, params));
-				return;
-			}
+					instance.update(user, '*');
 
-			next();
-		};
-	});
+					array.push(instance);
+				});
 
-	app.set('middlewares:logged-to', function (url, params) {
-		return function (req, res) {
-			if (req.session && req.session.returnTo) {
-				res.redirect(req.session.returnTo);
-
-				delete req.session.returnTo;
-
-				return;
-			}
-
-			res.redirect(
-				app.reverse(url, params));
-		};
-	});
+				done(null, array);
+			});
+		});
+	};
 };

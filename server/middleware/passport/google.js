@@ -9,7 +9,7 @@ module.exports = function (app) {
 			passReqToCallback: true
 		},
 		function (req, identifier, profile, done) {
-			var User = app.get('models:User');
+			var User = app.models.user;
 
 			User.auth(req, 'google', identifier, {
 				name: profile.displayName

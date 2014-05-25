@@ -1,16 +1,14 @@
-var app = require('express.io')();
+var app = require('express')();
 
-app
-	.http()
-	.io();
+require('./server/require')(app);
 
-require('express-require')(app);
-require('express-reversible')(app);
+app.helpers	= {};
+app.models = {};
+app.db = {};
 
 app.require('./server/config');
 app.require('./server/models');
-app.require('./server/middlewares');
-app.require('./server/routes');
+app.require('./server/middleware');
 app.require('./server/api');
 
 app.listen(process.env.PORT || 80);

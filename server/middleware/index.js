@@ -1,12 +1,16 @@
-var express = require('express.io');
+var express = require('express'),
+	helmet = require('helmet');
 
 module.exports = function (app) {
-	app.use('/static', express.static(__dirname + '/../../static/'));
-	app.use(express.json());
-	app.use(express.query());
-	app.use(express.urlencoded());
-	app.use(express.cookieParser(app.get('cookie secret')));
-	app.use(express.session({
+	app.require('./helpers');
+
+	app.use('/static', express.static('static'));
+
+	helmet.defaults(app);
+
+	app.use(require('body-parser')());
+	app.use(require('cookie-parser')(app.get('cookie secret')));
+	app.use(require('express-session')({
 		secret: app.get('session secret')
 	}));
 
@@ -20,7 +24,7 @@ module.exports = function (app) {
 		next();
 	});
 
-	app.use(app.router);
+	app.require('./routes');
 
 	app.use(function (req, res) {
 		res.render('error', {
@@ -29,9 +33,9 @@ module.exports = function (app) {
 	});
 
 	app.use(function (err, req, res, next) {
-		console.error(err.stack);
 		res.render('error', {
-			code: 500
+			code: 500,
+			error: err
 		});
 	});
 };
