@@ -30,6 +30,10 @@ module.exports = function (app) {
 		.attr('ldap_id', {
 			tags: ['accounts']
 		});
+//
+//	User.prototype.test = function () {
+//		console.log(1);
+//	};
 
 	User.init = function (instance) {
 		instance.creationDate(+new Date());

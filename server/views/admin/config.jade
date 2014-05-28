@@ -1,4 +1,12 @@
 extends ../layout
 
 block content
-	Here we will place server config like backend endpoint & backend offline
+	form(action='/admin/config', method='POST')
+		ul
+		li: label Backend endpoint:
+			input(type='text', value=settings['config:backend-endpoint'], name='backend[endpoint]')
+		li: label Backend offline:
+			input(type='checkbox', checked=settings['config:backend-offline'], name='backend[offline]')
+		li
+			button Send
+

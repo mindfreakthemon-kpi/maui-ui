@@ -1,5 +1,7 @@
 var express = require('express'),
-	helmet = require('helmet');
+	helmet = require('helmet'),
+	session = require('express-session'),
+	RedisStore = require('connect-redis')(session);
 
 module.exports = function (app) {
 	app.require('./helpers');
@@ -9,9 +11,20 @@ module.exports = function (app) {
 	helmet.defaults(app);
 
 	app.use(require('body-parser')());
-	app.use(require('cookie-parser')(app.get('cookie secret')));
-	app.use(require('express-session')({
-		secret: app.get('session secret')
+	app.use(require('cookie-parser')(app.get('config:cookie-secret')));
+
+	app.use(session({
+		secret: app.get('config:session-secret'),
+		store: new RedisStore({
+			client: app.db.redis,
+			prefix: app.get('config:session-redis-prefix')
+		}),
+		cookie: {
+			path: '/',
+			httpOnly: true,
+			secure: false,
+			maxAge: app.get('config:session-maxAge')
+		}
 	}));
 
 	require('./passport/index')(app);

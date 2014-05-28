@@ -10,3 +10,6 @@ block content
 					li Creation date: #{user.creationDate()}
 					li Google ID: #{user.googleId()}
 					li LDAP ID: #{user.ldapId()}
+					li Remove:
+						form(action='/admin/users/remove/' + user.id(), method='GET')
+							button Remove
