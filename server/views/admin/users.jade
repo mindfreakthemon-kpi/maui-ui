@@ -2,7 +2,7 @@ extends ../layout
 
 block content
 	ol
-		each user in data
+		each user in users
 			li #{user.id()}
 				ul
 					li Name: #{user.name()}

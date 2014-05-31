@@ -23,15 +23,28 @@ module.exports = function (app) {
 			return;
 		}
 
+		app.logger.info('[OUT] making %s request to %s', method, path, {
+			json: json
+		});
+
 		request({
 			url: endpoint + path,
 			method: method,
 			json: json
-		}, callback);
+		}, function (error, response, json) {
+			if (error) {
+				app.logger.warn('[IN] error while making %s request to %s: %s', method, path, error);
+			} else {
+				app.logger.info('[IN] received response from a %s request to %s', method, path);
+			}
+
+			callback.apply(null, arguments);
+		});
 	}
 
 	api.get = api.bind(api, 'get');
 	api.post = api.bind(api, 'post');
+	api.del = api.bind(api, 'delete');
 
 	app.api = api;
 };

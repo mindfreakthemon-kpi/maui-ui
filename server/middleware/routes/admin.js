@@ -11,6 +11,8 @@ module.exports = function (app) {
 			req.user.role(req.query.role);
 
 			app.models.user.save(req.user, function () {
+				app.logger.info('user %s become a %s just now', req.user.name(), req.user.role());
+
 				res.redirect('..');
 			});
 
@@ -21,23 +23,23 @@ module.exports = function (app) {
 	}
 
 	function users(req, res) {
-		app.models.user.list(function (err, list) {
+		app.models.user.list(function (error, users) {
 			res.render('admin/users', {
-				error: err,
-				data: list
+				error: error,
+				users: users
 			});
 		});
 	}
 
-	function deleteUser(req, res, next) {
+	function removeUser(req, res, next) {
 		if (req.params.id === req.user.id()) {
 			res.redirect('..');
 			return;
 		}
 
-		app.models.user.remove(req.params.id, function (err) {
-			if (err) {
-				next(new Error(err));
+		app.models.user.remove(req.params.id, function (error) {
+			if (error) {
+				next(new Error(error));
 				return;
 			}
 
@@ -45,11 +47,19 @@ module.exports = function (app) {
 		});
 	}
 
-	function configSave(req, res) {
+	function config(req, res) {
 		app.set('config:backend-endpoint', req.form.backend.endpoint);
 		app.set('config:backend-offline', req.form.backend.offline);
 
 		res.redirect('config');
+	}
+
+	function clearTasks(req, res) {
+		app.api.del('remove/all', function () {
+			app.models.task.clear(function () {
+				res.redirect('/admin/');
+			});
+		});
 	}
 
 	var router = express.Router();
@@ -63,14 +73,16 @@ module.exports = function (app) {
 		.get('/', app.helpers.render('admin/main'))
 
 		.get('/users', users)
-		.all('/users/remove/:id', deleteUser)
+		.all('/users/remove/:id', removeUser)
+
+		.get('/tasks/clear', clearTasks)
 
 		.get('/config', app.helpers.render('admin/config'))
 		.post('/config',
 			form(
 				field('backend.endpoint').trim().required(),
 				field('backend.offline').toBoolean()
-			), configSave);
+			), config);
 
 	app.use('/admin', router);
 };

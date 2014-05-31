@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+	ul
+		li: a(href='/dashboard/') Dashboard
+		li: a(href='/tasks/') Tasks
+
+	h3 status of #{task.id()}
+	.well
+		= JSON.stringify(task.toJSON('*'))
+
+

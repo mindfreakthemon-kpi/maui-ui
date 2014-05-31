@@ -1,49 +1,63 @@
-var express = require('express');
+var express = require('express'),
+	querystring = require('querystring'),
+	form = require('express-form'),
+	field = form.field;
 
 module.exports = function (app) {
+	var Task = app.models.task;
+
 	function list(req, res) {
-		app.api.get('requests', function (error, response, json) {
+		var query = querystring.stringify({
+			user: req.user.id()
+		});
+
+		app.api.get('requests?' + query, function (error, response, json) {
 			res.render('tasks/list', {
 				error: error,
-				data: json
+				tasks: Task.wrap(json)
+			});
+		});
+	}
+
+	function view(req, res) {
+		var query = querystring.stringify({
+			id: req.params.id
+		});
+
+		app.api.get('requests?' + query, function (error, response, json) {
+			var tasks = Task.wrap(json);
+
+			res.render('tasks/view', {
+				error: error,
+				task: tasks.pop()
 			});
 		});
 	}
 
 	function create(req, res) {
-		app.api.get('param/simple', function (error, response, json) {
-			res.render('tasks/create', {
-				error: error,
-				data: json || {}
-			});
-		});
-	}
-
-	function createPost(req, res) {
-		app.api.post('postrequest', {
-			request: req.body,
-			type: req.body.type
+		app.api.post('request', {
+			request: {
+				name: req.body.name,
+				user_id: req.user.id(),
+				type: 'simple'
+			}
 		},
 		function (error, response, json) {
 			if (error) {
 				res.redirect('create');
-			} else {
-				res.redirect(json.id);
+				return;
 			}
+
+			res.redirect('/tasks/' + json.id);
 		});
 	}
 
-	function delPost(req, res) {
-		app.api.get('remove/' + req.body.id, function (error, response, json) {
-			res.redirect('.');
-		});
-	}
+	function remove(req, res) {
+		var id = req.body.id;
 
-	function view(req, res) {
-		app.api.get('request/' + req.params.id, function (error, response, json) {
-			res.render('tasks/status', {
-				error: error,
-				data: json
+		app.api.del('remove/' + id, function () {
+			Task.remove(id, function () {
+				res.redirect('/tasks/');
 			});
 		});
 	}
@@ -53,9 +67,12 @@ module.exports = function (app) {
 	router
 		.all('*', app.helpers.loggedIn('/auth/login'))
 		.get('/', list)
-		.get('/create', create)
-		.post('/create', createPost)
-		.post('/delete', delPost)
+		.get('/create', app.helpers.render('tasks/create'))
+		.post('/create',
+			form(
+				field('name').trim().required()
+			), create)
+		.post('/remove', remove)
 		.get('/:id', view);
 
 	app.use('/tasks', router);

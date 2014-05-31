@@ -1,6 +1,18 @@
 extends ../layout
 
 block content
-	a(href='/tasks/create') Create new task
-	= data
+	ul
+		li: a(href='/dashboard/') Dashboard
+		li: a(href='/tasks/create') Create new task
+
+	ul
+		each task in tasks
+			li
+				h4
+					| [
+					a(href='/tasks/' + task.id())= task.id()
+					| ] #{task.name()}
+				form(action='/tasks/remove/', method='POST')
+					input(type='hidden', name='id', value=task.id())
+					button Remove
 

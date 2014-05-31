@@ -30,36 +30,12 @@ module.exports = function (app) {
 		.attr('ldap_id', {
 			tags: ['accounts']
 		});
-//
-//	User.prototype.test = function () {
-//		console.log(1);
-//	};
+
+	model.patch(User, 'users');
 
 	User.init = function (instance) {
 		instance.creationDate(+new Date());
 		instance.id(uuid.v4());
-	};
-
-	/**
-	 * Loads user from redis by it's id
-	 * @param id
-	 * @param done
-	 */
-	User.load = function (id, done) {
-		redis.hgetall('users:' + id, function (error, data) {
-			if (error) {
-				done(error);
-				return;
-			}
-
-			var instance = User.create();
-
-			if (data) {
-				instance.update(data, '*');
-			}
-
-			done(null, instance);
-		});
 	};
 
 	/**
@@ -115,17 +91,6 @@ module.exports = function (app) {
 		}
 	};
 
-	User.save = function (instance, done) {
-		redis.hmset('users:' + instance.id(), instance.toJSON('*'), function (error) {
-			if (error) {
-				done(error);
-				return;
-			}
-
-			done(null, instance);
-		});
-	};
-
 	User.remove = function (id, done) {
 		var queue = redis.multi();
 
@@ -144,42 +109,6 @@ module.exports = function (app) {
 			}
 
 			queue.exec(done);
-		});
-	};
-
-	User.list = function (done) {
-		var queue = redis.multi();
-
-		redis.keys('users:*', function (error, keys) {
-			if (error) {
-				done(error);
-				return;
-			}
-
-			if (keys) {
-				keys.forEach(function (key) {
-					queue.hgetall(key);
-				});
-			}
-
-			queue.exec(function (error, users) {
-				if (error) {
-					done(error);
-					return;
-				}
-
-				var array = [];
-
-				users.forEach(function (user) {
-					var instance = User.create();
-
-					instance.update(user, '*');
-
-					array.push(instance);
-				});
-
-				done(null, array);
-			});
 		});
 	};
 };

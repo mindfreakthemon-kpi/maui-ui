@@ -7,6 +7,7 @@ app.models = {};
 app.db = {};
 
 app.require('./server/config');
+app.require('./server/model');
 app.require('./server/models');
 app.require('./server/middleware');
 app.require('./server/api');

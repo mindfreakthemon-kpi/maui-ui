@@ -17,7 +17,8 @@ module.exports = function (grunt) {
 				script: 'server.js',
 				options: {
 					env: {
-						PORT: '80'
+						PORT: '80',
+						BACKEND_ENDPOINT: 'http://barabashkastuff.com:8888/rest/maui/'
 					},
 					ignore: ['node_modules/**'],
 					watch: [

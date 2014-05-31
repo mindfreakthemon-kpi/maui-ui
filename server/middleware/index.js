@@ -1,7 +1,9 @@
 var express = require('express'),
 	helmet = require('helmet'),
 	session = require('express-session'),
-	RedisStore = require('connect-redis')(session);
+	RedisStore = require('connect-redis')(session),
+	winston = require('winston'),
+	logger = require('express-winston');
 
 module.exports = function (app) {
 	app.require('./helpers');
@@ -37,7 +39,25 @@ module.exports = function (app) {
 		next();
 	});
 
+	app.use(logger.logger({
+		transports: [
+			new winston.transports.Console({
+				json: false,
+				colorize: true
+			})
+		]
+	}));
+
 	app.require('./routes');
+
+	app.use(logger.errorLogger({
+		transports: [
+			new winston.transports.Console({
+				json: false,
+				colorize: true
+			})
+		]
+	}));
 
 	app.use(function (req, res) {
 		res.render('error', {
