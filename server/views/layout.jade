@@ -2,9 +2,20 @@ doctype html
 html
 	head
 		meta(charset='utf-8')
-		title Test
+		title Maui
 		meta(name='viewport', content='width=device-width, initial-scale=1.0')
 		//script(src='/static/lib/require.js', data-main='/static/js/index.js')
-	body
-		#container
-			block content
+		script(src='/static/lib/jquery-2.1.1.min.js')
+		script(src='/static/lib/bootstrap/js/bootstrap.min.js')
+		script(src='/static/unify/js/app.js')
+		link(rel='stylesheet', href='/static/lib/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/static/unify/css/app.css')
+		link(rel='stylesheet', href='/static/unify/css/responsive.css')
+		link(rel='stylesheet', href='/static/unify/css/style.css')
+		link(rel='stylesheet', href='/static/unify/css/headers/header1.css')
+		link(rel='stylesheet', href='/static/unify/css/themes/default.css')
+		link(rel='stylesheet', href='/static/unify/css/pages/feature_timeline2.css')
+		link(rel='stylesheet', href='/static/css/index.css')
+	body.boxed-layout.container
+		div.wrapper
+			block header

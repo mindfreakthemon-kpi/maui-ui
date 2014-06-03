@@ -1,18 +1,56 @@
-extends ../layout
+extends ../wrapper
 
 block content
-	ul
-		li: a(href='/dashboard/') Dashboard
-		li: a(href='/tasks/create') Create new task
+	.container
+		ul
+			li: a(href='/dashboard/') Dashboard
+			li: a(href='/tasks/create') Create new task
 
-	ul
-		each task in tasks
+
+
+		ul.timeline-v2
 			li
-				h4
-					| [
-					a(href='/tasks/' + task.id())= task.id()
-					| ] #{task.name()}
-				form(action='/tasks/remove/', method='POST')
-					input(type='hidden', name='id', value=task.id())
-					button Remove
+				time.cbp_tmtime(datetime="")
+					span 4/1/14
+					span January
+				i.cbp_tmicon.rounded-x.hidden-xs
+				div.cbp_tmlabel
+					h2: a(href="#") Task 2
+					.row
+						.col-md-4
+							img.img-responsive(src="" alt="image")
+							.md-margin-bottom-20
+						.col-md-8   
+							p.
+								Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape. 
+							p.
+								Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato.
+			li
+				time.cbp_tmtime(datetime="")
+					span 1/1/14
+					span January
+				i.cbp_tmicon.rounded-x.hidden-xs
+				div.cbp_tmlabel
+					h2: a(href="#") Task
+					.row
+						.col-md-4
+							img.img-responsive(src="" alt="image")
+							.md-margin-bottom-20
+						.col-md-8   
+							p.
+								Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape. 
+							p.
+								Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato.
 
+
+
+//		ul
+//			each task in tasks
+//				li
+//					h4
+//						| [
+//						a(href='/tasks/' + task.id())= task.id()
+//						| ] #{task.name()}
+//					form(action='/tasks/remove/', method='POST')
+//						input(type='hidden', name='id', value=task.id())
+//						button Remove

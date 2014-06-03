@@ -1,4 +1,31 @@
-html, body {
-	color: #fff;
-	background: red;
+body {
+	background-image: url(/static/img/background.png);
+}
+.reg-header {
+	text-align: center;
+}
+.timeline-v2 {
+    & > li {
+        .cbp_tmlabel {
+            background-color: #fff;
+        }
+    }
+}
+.content {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.timeline-v2 > li .cbp_tmlabel:after {
+	border-right-color: #fff;
+}
+.timeline-v2:before {
+	background: #fff;
+}
+.timeline-v2 > li .cbp_tmicon {
+	box-shadow: 0 0 0 4px #fff;
+}
+@media screen and (max-width: 47.2em) {
+    .timeline-v2 > li .cbp_tmlabel:after {
+        border-bottom-color: #fff;
+    }
 }

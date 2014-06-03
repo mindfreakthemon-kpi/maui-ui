@@ -26,7 +26,20 @@ module.exports = function (grunt) {
 						'server/**/*.js'
 					]
 				}
-			}
+			},
+			client: {
+                                script: 'server.js',
+                                options: {
+                                        env: {
+                                                PORT: '8080'
+                                        },
+                                        ignore: ['node_modules/**'],
+                                        watch: [
+                                                'server.js',
+                                                'server/**/*.js'
+                                        ]
+                                }
+                        }
 		},
 
 		clean: ['static/css', 'static/js/templates.js'],
@@ -90,7 +103,7 @@ module.exports = function (grunt) {
 
 		concurrent: {
 			watch: {
-				tasks: ['watch:templates', 'watch:less', 'watch:livereload']
+				tasks: ['watch:templates', 'watch:less', 'watch:livereload', 'nodemon:client']
 			}
 		}
 	});

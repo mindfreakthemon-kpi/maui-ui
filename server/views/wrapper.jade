@@ -1,0 +1,22 @@
+extends layout
+
+block header 
+	.header
+		.top
+			.container
+				ul.loginbar.pull-right
+					li
+						a(data-toggle="modal" data-target="#Help") Help
+					li.devider
+					li: a(href='/auth/logout') Logout	
+
+	block content
+
+	.modal.fade#Help(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+							.modal-dialog
+								.modal-content
+									.modal-header
+										button.close(aria-hidden="true" data-dismiss="modal" type="button") ×
+										h4#myModalLabel.modal-title Help
+									.modal-body
+										h3 ...

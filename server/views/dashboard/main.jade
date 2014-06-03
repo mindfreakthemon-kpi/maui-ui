@@ -1,9 +1,9 @@
-extends ../layout
+extends ../wrapper
 
 block content
-	h1 Hello #{user.name()} &nbsp;
-	ul
-		if user.role() === 'admin'
-			li: a(href='/admin') Admin page
-		li: a(href='/tasks') Tasks
-		li: a(href='/auth/logout') Logout
+	.container
+		h1 Hello #{user.name()}
+		ul
+			if user.role() === 'admin'
+				li: a(href='/admin') Admin page
+			li: a(href='/tasks') Task list

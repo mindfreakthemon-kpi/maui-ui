@@ -1,8 +1,8 @@
 require({
 	baseUrl: '/static/js/',
 	paths: {
-		// jquery: '../lib/jquery-2.1.1.min',
-		// bootstrap: '../lib/bootstrap/js/bootstrap',
+		jquery: '../lib/jquery-2.1.1.min.js',
+		bootstrap: '../lib/bootstrap/js/bootstrap',
 		jade: '../lib/jade/runtime'
 	}
 }, ['templates'], function (templates) {

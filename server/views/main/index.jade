@@ -1,5 +1,15 @@
-extends ../layout
+extends ../wrapper
 
 block content
-	h1 Hello world! hellow
-	a(href='/auth/login') Login
+	.container.content
+		.row
+			.col-md-6.col-md-offset-3.col-sm-6.col-sm-offset-3
+				form.reg-page
+					.reg-header
+						h2 Login to your account
+					a.btn-u.pull-right(href='/auth/google') Login with google
+			
+			
+
+
+
