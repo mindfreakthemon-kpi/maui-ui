@@ -6,8 +6,9 @@ block header
 			.container
 				ul.loginbar.pull-right
 					li: a(data-toggle="modal" data-target="#Help") Help
-					li.topbar-devider
-					li: a(href='/auth/logout') Logout	
+					if user
+						li.topbar-devider
+						li: a(href='/auth/logout') Logout	
 
 	block content
 
