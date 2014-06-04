@@ -2,8 +2,8 @@ var request = require('request');
 
 module.exports = function (app) {
 	function api(method, path) {
-		var offline = app.get('config:backend-offline'),
-			endpoint = app.get('config:backend-endpoint'),
+		var offline = app.conf.get('backend:offline'),
+			endpoint = app.conf.get('backend:endpoint'),
 			callback,
 			json = true;
 

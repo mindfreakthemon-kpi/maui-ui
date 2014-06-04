@@ -31,3 +31,6 @@ static/js/templates.js
 
 # Idea workspace
 *.iws
+
+# JSON Config
+config.json

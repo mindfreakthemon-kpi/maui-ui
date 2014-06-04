@@ -27,6 +27,12 @@ module.exports = function (app) {
 		.attr('google_id', {
 			tags: ['accounts']
 		})
+		.attr('github_id', {
+			tags: ['accounts']
+		})
+		.attr('yandex_id', {
+			tags: ['accounts']
+		})
 		.attr('ldap_id', {
 			tags: ['accounts']
 		});

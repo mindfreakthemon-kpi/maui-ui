@@ -9,22 +9,37 @@ module.exports = function (app) {
 		function (req, res, next) {
 			var url = req.protocol + '://' + req.get('host');
 
-			passport._strategies.google._relyingParty.returnUrl = url + '/auth/google/return';
+			passport._strategies.google._relyingParty.returnUrl = url + '/auth/google/callback';
 			passport._strategies.google._relyingParty.realm = url;
-			passport.authenticate('google')(req, res, next);
-		})
+			next();
+		},
+		passport.authenticate('google'))
 
-		.get('/google/return',
+		.get('/google/callback',
 		passport.authenticate('google', {
-			// let the middleware do the redirect
-			// successRedirect: '/',
-			failureRedirect: 'login'
+			failureRedirect: '/auth/login'
+		}),
+		app.helpers.loggedTo('/'))
+
+		.get('/github', passport.authenticate('github'))
+
+		.get('/github/callback',
+		passport.authenticate('github', {
+			failureRedirect: '/auth/login'
+		}),
+		app.helpers.loggedTo('/'))
+
+		.get('/yandex', passport.authenticate('yandex'))
+
+		.get('/yandex/callback',
+		passport.authenticate('yandex', {
+			failureRedirect: '/auth/login'
 		}),
 		app.helpers.loggedTo('/'))
 
 		.get('/login',
 		app.helpers.loggedOut('/'),
-		app.helpers.render('auth/login'))
+		app.helpers.redirect('/'))
 
 		.get('/logout',
 		app.helpers.loggedIn('login'),

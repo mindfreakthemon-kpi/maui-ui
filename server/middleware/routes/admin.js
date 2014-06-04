@@ -4,7 +4,7 @@ var express = require('express'),
 
 module.exports = function (app) {
 	function become(req, res, next) {
-		var key = app.get('config:admin-key');
+		var key = app.conf.get('admin:key');
 
 		if (req.user && key &&
 			req.query.key === key) {
@@ -48,8 +48,22 @@ module.exports = function (app) {
 	}
 
 	function config(req, res) {
-		app.set('config:backend-endpoint', req.form.backend.endpoint);
-		app.set('config:backend-offline', req.form.backend.offline);
+		var payload = req.form;
+
+		app.conf.set('backend:endpoint', payload.backend.endpoint);
+		app.conf.set('backend:offline', payload.backend.offline);
+
+		app.conf.set('passport:yandex', {
+			client_id: payload.passport.yandex.client_id,
+			client_secret: payload.passport.yandex.client_secret,
+			callback_url: payload.passport.yandex.callback_url
+		});
+
+		app.conf.set('passport:github', {
+			client_id: payload.passport.github.client_id,
+			client_secret: payload.passport.github.client_secret,
+			callback_url: payload.passport.github.callback_url
+		});
 
 		res.redirect('config');
 	}
@@ -81,7 +95,13 @@ module.exports = function (app) {
 		.post('/config',
 			form(
 				field('backend.endpoint').trim().required(),
-				field('backend.offline').toBoolean()
+				field('backend.offline').toBoolean(),
+				field('passport.yandex.client_id').trim().required(),
+				field('passport.yandex.client_secret').trim().required(),
+				field('passport.yandex.callback_url').trim().required(),
+				field('passport.github.client_id').trim().required(),
+				field('passport.github.client_secret').trim().required(),
+				field('passport.github.callback_url').trim().required()
 			), config);
 
 	app.use('/admin', router);

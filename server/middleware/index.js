@@ -3,35 +3,36 @@ var express = require('express'),
 	session = require('express-session'),
 	RedisStore = require('connect-redis')(session),
 	winston = require('winston'),
+	passport = require('passport'),
 	logger = require('express-winston');
 
 module.exports = function (app) {
-	app.require('./helpers');
-
 	app.use('/static', express.static('static'));
 
 	helmet.defaults(app);
 
 	app.use(require('body-parser')());
-	app.use(require('cookie-parser')(app.get('config:cookie-secret')));
+	app.use(require('cookie-parser')(app.conf.get('cookie:secret')));
 
 	app.use(session({
-		secret: app.get('config:session-secret'),
+		secret: app.conf.get('session:secret'),
 		store: new RedisStore({
 			client: app.db.redis,
-			prefix: app.get('config:session-redis-prefix')
+			prefix: app.conf.get('session:prefix')
 		}),
 		cookie: {
 			path: '/',
 			httpOnly: true,
 			secure: false,
-			maxAge: app.get('config:session-maxAge')
+			maxAge: app.conf.get('session:maxAge')
 		}
 	}));
 
-	require('./passport/index')(app);
+	app.use(passport.initialize());
+	app.use(passport.session());
 
 	app.use(function (req, res, next) {
+		res.locals.conf = app.conf;
 		res.locals.user = req.user;
 		res.locals.session = req.session;
 		res.locals.request = req;
