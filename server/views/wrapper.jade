@@ -2,21 +2,25 @@ extends layout
 
 block header 
 	.header
-		.top
+		.topbar
 			.container
 				ul.loginbar.pull-right
-					li
-						a(data-toggle="modal" data-target="#Help") Help
-					li.devider
+					li: a(data-toggle="modal" data-target="#Help") Help
+					li.topbar-devider
 					li: a(href='/auth/logout') Logout	
 
 	block content
 
 	.modal.fade#Help(tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
-							.modal-dialog
-								.modal-content
-									.modal-header
-										button.close(aria-hidden="true" data-dismiss="modal" type="button") ×
-										h4#myModalLabel.modal-title Help
-									.modal-body
-										h3 ...
+		.modal-dialog
+			.modal-content
+				.modal-header
+					button.close(aria-hidden="true" data-dismiss="modal" type="button") ×
+					h4#myModalLabel.modal-title Help
+				.modal-body
+					h3 ...
+					.shadow-wrapper
+						blockquote.hero.text-right.box-shadow.shadow-effect-3
+							p: em.
+								Lorem ipsum dolor sit amet, consectetur adipiscing duis mollis, est non commodo luctus elit posuere erat a ante. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis lorem ipsum dolor sit amet, consectetur adipiscing
+							small: em Etiam porta sem malesuada

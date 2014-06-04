@@ -1,5 +1,5 @@
-body {
-	background-image: url(/static/img/background.png);
+.boxed-layout {
+	box-shadow: none;
 }
 .reg-header {
 	text-align: center;
@@ -10,10 +10,6 @@ body {
             background-color: #fff;
         }
     }
-}
-.content {
-	padding-top: 40px;
-	padding-bottom: 40px;
 }
 .timeline-v2 > li .cbp_tmlabel:after {
 	border-right-color: #fff;
@@ -27,5 +23,6 @@ body {
 @media screen and (max-width: 47.2em) {
     .timeline-v2 > li .cbp_tmlabel:after {
         border-bottom-color: #fff;
+        border-right-color: transparent;
     }
 }
