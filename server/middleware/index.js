@@ -51,20 +51,22 @@ module.exports = function (app) {
 
 	app.require('./routes');
 
-	app.use(logger.errorLogger({
-		transports: [
-			new winston.transports.Console({
-				json: false,
-				colorize: true
-			})
-		]
-	}));
-
 	app.use(function (req, res) {
+		res.status(404);
+
 		res.render('error', {
 			code: 404
 		});
 	});
+
+	app.use(logger.errorLogger({
+		transports: [
+			new winston.transports.Console({
+				json: true,
+				colorize: true
+			})
+		]
+	}));
 
 	app.use(function (err, req, res, next) {
 		res.render('error', {

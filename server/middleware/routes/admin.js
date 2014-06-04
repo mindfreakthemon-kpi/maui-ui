@@ -82,7 +82,6 @@ module.exports = function (app) {
 		.get('/error', app.helpers.render('admin/error'))
 
 		.all('*', app.helpers.loggedIn('/auth/login'), app.helpers.isRole('admin', 'error'))
-		.get('/', app.helpers.render('admin/main'))
 
 		.get('/users', users)
 		.all('/users/remove/:id', removeUser)

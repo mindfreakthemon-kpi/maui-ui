@@ -118,5 +118,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', ['jshint']);
 	grunt.registerTask('assets', ['jade:templates', 'less:main']);
+	grunt.registerTask('devel', ['assets', 'nodemon:server']);
 	grunt.registerTask('default', ['concurrent:watch']);
 };
