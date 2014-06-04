@@ -4,6 +4,7 @@ node_js:
   - '0.10'
 before_script:
   - npm install -g grunt-cli
+  - grunt assets
 deploy:
   provider: heroku
   skip_cleanup: true

@@ -6,15 +6,15 @@ module.exports = function (app) {
 	conf.env({
 		separator: '__',
 		whitelist: [
-			'BACKEND__ENDPOINT',
-			'BACKEND__OFFLINE',
-			'ADMIN__KEY',
-			'COOKIE__SECRET',
-			'SESSION__SECRET',
-			'PASSPORT__YANDEX__CLIENT_ID',
-			'PASSPORT__YANDEX__CLIENT_SECRET',
-			'PASSPORT__GITHUB__CLIENT_ID',
-			'PASSPORT__GITHUB__CLIENT_SECRET'
+			'backend__endpoint',
+			'backend__offline',
+			'admin__key',
+			'cookie__secret',
+			'session__secret',
+			'passport__yandex__client_id',
+			'passport__yandex__client_secret',
+			'passport__github__client_id',
+			'passport__github__client_secret'
 		]
 	});
 

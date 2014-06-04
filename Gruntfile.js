@@ -17,8 +17,8 @@ module.exports = function (grunt) {
 				script: 'server.js',
 				options: {
 					env: {
-						PORT: '80',
-						BACKEND_ENDPOINT: 'http://barabashkastuff.com:8888/rest/maui/'
+						PORT: '80'
+
 					},
 					ignore: ['node_modules/**'],
 					watch: [
@@ -28,18 +28,18 @@ module.exports = function (grunt) {
 				}
 			},
 			client: {
-                                script: 'server.js',
-                                options: {
-                                        env: {
-                                                PORT: '8080'
-                                        },
-                                        ignore: ['node_modules/**'],
-                                        watch: [
-                                                'server.js',
-                                                'server/**/*.js'
-                                        ]
-                                }
-                        }
+				script: 'server.js',
+				options: {
+					env: {
+						PORT: '8080'
+					},
+					ignore: ['node_modules/**'],
+					watch: [
+						'server.js',
+						'server/**/*.js'
+					]
+				}
+			}
 		},
 
 		clean: ['static/css', 'static/js/templates.js'],
@@ -116,6 +116,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.loadNpmTasks('grunt-nodemon');
 
-	grunt.registerTask('test', 'jshint');
+	grunt.registerTask('test', ['jshint']);
+	grunt.registerTask('assets', ['jade:templates', 'less:main']);
 	grunt.registerTask('default', ['concurrent:watch']);
 };
