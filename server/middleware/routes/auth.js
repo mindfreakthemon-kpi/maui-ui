@@ -5,15 +5,17 @@ module.exports = function (app) {
 	var router = express.Router();
 
 	router
-		.get('/google',
-		function (req, res, next) {
+		.all('*', function (req, res, next) {
 			var url = req.protocol + '://' + req.get('host');
 
 			passport._strategies.google._relyingParty.returnUrl = url + '/auth/google/callback';
 			passport._strategies.google._relyingParty.realm = url;
+			passport._strategies.github._callbackURL = url + '/auth/github/callback';
+			passport._strategies.yandex._callbackURL = url + '/auth/yandex/callback';
 			next();
-		},
-		passport.authenticate('google'))
+		})
+
+		.get('/google', passport.authenticate('google'))
 
 		.get('/google/callback',
 		passport.authenticate('google', {

@@ -55,14 +55,12 @@ module.exports = function (app) {
 
 		app.conf.set('passport:yandex', {
 			client_id: payload.passport.yandex.client_id,
-			client_secret: payload.passport.yandex.client_secret,
-			callback_url: payload.passport.yandex.callback_url
+			client_secret: payload.passport.yandex.client_secret
 		});
 
 		app.conf.set('passport:github', {
 			client_id: payload.passport.github.client_id,
-			client_secret: payload.passport.github.client_secret,
-			callback_url: payload.passport.github.callback_url
+			client_secret: payload.passport.github.client_secret
 		});
 
 		res.redirect('config');
@@ -98,10 +96,8 @@ module.exports = function (app) {
 				field('backend.offline').toBoolean(),
 				field('passport.yandex.client_id').trim().required(),
 				field('passport.yandex.client_secret').trim().required(),
-				field('passport.yandex.callback_url').trim().required(),
 				field('passport.github.client_id').trim().required(),
-				field('passport.github.client_secret').trim().required(),
-				field('passport.github.callback_url').trim().required()
+				field('passport.github.client_secret').trim().required()
 			), config);
 
 	app.use('/admin', router);

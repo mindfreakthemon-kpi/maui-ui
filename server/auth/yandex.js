@@ -5,7 +5,6 @@ module.exports = function (app) {
 	passport.use(new YandexStrategy({
 			clientID: app.conf.get('passport:yandex:client_id'),
 			clientSecret: app.conf.get('passport:yandex:client_secret'),
-			callbackURL: app.conf.get('passport:yandex:callback_url'),
 			passReqToCallback: true
 		},
 		function (req, accessToken, refreshToken, profile, done) {

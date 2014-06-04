@@ -13,10 +13,8 @@ module.exports = function (app) {
 			'SESSION__SECRET',
 			'PASSPORT__YANDEX__CLIENT_ID',
 			'PASSPORT__YANDEX__CLIENT_SECRET',
-			'PASSPORT__YANDEX__CALLBACK_URL',
 			'PASSPORT__GITHUB__CLIENT_ID',
-			'PASSPORT__GITHUB__CLIENT_SECRET',
-			'PASSPORT__GITHUB__CALLBACK_URL'
+			'PASSPORT__GITHUB__CLIENT_SECRET'
 		]
 	});
 
@@ -43,13 +41,11 @@ module.exports = function (app) {
 		passport: {
 			yandex: {
 				client_id: '',
-				client_secret: '',
-				callback_url: ''
+				client_secret: ''
 			},
 			github: {
 				client_id: '',
-				client_secret: '',
-				callback_url: ''
+				client_secret: ''
 			}
 		}
 	});

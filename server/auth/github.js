@@ -5,7 +5,6 @@ module.exports = function (app) {
 	passport.use(new GitHubStrategy({
 			clientID: app.conf.get('passport:github:client_id'),
 			clientSecret: app.conf.get('passport:github:client_secret'),
-			callbackURL: app.conf.get('passport:github:callback_url'),
 			passReqToCallback: true
 		},
 		function (req, accessToken, refreshToken, profile, done) {
