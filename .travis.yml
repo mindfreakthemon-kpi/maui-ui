@@ -6,6 +6,7 @@ before_script:
   - npm install -g grunt-cli
 deploy:
   provider: heroku
+  skip_cleanup: true
   api_key:
     secure: 44foKggRvQcobtbMNS/ZXiTm2xwgj2Ihfj8kkDUDkIorSmX5RbjCke6VWX9kWkkrqmVciKIHbazS+/vD984/oRJ1xBA6YJM+C3XfZWLKcWnrGeHFT0sYo2R/cX/9Q79LbruzryLYKJtoG8I57nb8iwYDeijqGHhlU76ZbOp7K3g=
   app: maui-ui
