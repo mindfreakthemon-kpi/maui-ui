@@ -5,30 +5,24 @@
     text-align: center;
 }
 .timeline-v2 {
-    & > li;
     & > li {
-        .cbp_tmlabel:after {
-            border-right-color: #fff;
-        }
-        .cbp_tmicon {
-            box-shadow: 0 0 0 4px #fff;
+        .cbp_tmlabel {
+            background-color: #fff;
         }
     }
 }
-.cbp_tmlabel {
-    background-color: #fff;
+.timeline-v2 > li .cbp_tmlabel:after {
+    border-right-color: #fff;
 }
 .timeline-v2:before {
     background: #fff;
 }
-@media {
-    screen {
-        and {
-            (max-width: {
-                47.2em) {
-                    .timeline-v2 > li .cbp_tmlabel:after;
-                }
-            }
-        }
+.timeline-v2 > li .cbp_tmicon {
+    box-shadow: 0 0 0 4px #fff;
+}
+@media screen and (max-width: 47.2em) {
+    .timeline-v2 > li .cbp_tmlabel:after {
+        border-bottom-color: #fff;
+        border-right-color: transparent;
     }
 }

@@ -14,7 +14,7 @@ block content
 						span DD/MM/YYYY
 					i.cbp_tmicon.rounded-x.hidden-xs
 					div.cbp_tmlabel
-						h2: a(href="#")= task.name()
+						h2: a(href="/tasks/#{task.id()}")= task.name()
 						.row
 							.col-md-3
 								script(type="text/javascript").
@@ -25,8 +25,9 @@ block content
 									.inner-pchart.col-md-3
 										div.circle(id='#{task.id()}')
 
-							.col-md-9   
-								a(href='/tasks/' + task.id()) View task (#{task.id()})
+							.col-md-9  
+								p.
+									some description of task 
 								form(action='/tasks/remove/', method='POST')
 									input(type='hidden', name='id', value=task.id())
 									button Remove
