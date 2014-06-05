@@ -8,7 +8,7 @@ module.exports = function (app) {
 
 	function list(req, res) {
 		var query = querystring.stringify({
-			user: req.user.id()
+			user_id: req.user.id()
 		});
 
 		app.api.get('requests?' + query, function (error, response, json) {
