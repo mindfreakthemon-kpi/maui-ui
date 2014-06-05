@@ -3,17 +3,28 @@ extends ../wrapper
 block content
 	.container.content
 		h1 Hello #{user.name()}
-		ul
-			if user.role() === 'admin'
-				li: a(href='/admin') Admin page
 
-		#accordion-1.panel-group.acc-v1
+		#main-menu.panel-group.acc-v1
+			if user.role() === 'admin'
+				.panel.panel-default.tag-box-v1
+					.panel-heading
+						h4.panel-title
+							a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#admin-page')
+								| Admin menu
+					#admin-page.panel-collapse.collapse
+						.panel-body
+								ul
+									li: a(href='/admin/users') User list
+									li: a(href='/admin/tasks/clear') Clear tasks
+									li: a(href='/admin/config') Server config
+									li: a(href='/dashboard') Back to dashboard
+
 			.panel.panel-default.tag-box-v1
 				.panel-heading
 					h4.panel-title
-						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion-1', href='#collapse-One')
+						a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#task-list')
 							| Tasks list
-				#collapse-One.panel-collapse.collapse.in
+				#task-list.panel-collapse.collapse
 					.panel-body
 						.row
 							.col-md-4
@@ -26,9 +37,9 @@ block content
 			.panel.panel-default.tag-box-v1
 				.panel-heading
 					h4.panel-title
-						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion-1', href='#collapse-Two')
+						a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#create-new')
 							| Add new task
-				#collapse-Two.panel-collapse.collapse
+				#create-new.panel-collapse.collapse
 					.panel-body
 						p. 
 							Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Food truck quinoa nesciunt laborum eiusmodolf moon tempor, sunt aliqua put a bird. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
