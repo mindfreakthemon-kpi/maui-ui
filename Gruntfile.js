@@ -102,6 +102,9 @@ module.exports = function (grunt) {
 		},
 
 		concurrent: {
+			options: {
+				logConcurrentOutput: true
+			},
 			watch: {
 				tasks: ['watch:templates', 'watch:less', 'watch:livereload', 'nodemon:client']
 			}
