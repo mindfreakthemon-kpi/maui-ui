@@ -2,13 +2,15 @@ extends ../wrapper
 
 block content
 	.container.content
-		ul
-			li: a(href="/dashboard/") Dashboard
-			li: a(href="/tasks/create/") Create task
+		.tab-v3
+			ul.nav.nav-pills.list-inline.margin-bottom-40
+				li: a(href="/dashboard/") Dashboard
+				li: a(href="/tasks/create/") Create task
 
 		ul.timeline-v2
 			each task in tasks
 				li
+					span #{task.creation_date}
 					time.cbp_tmtime
 						span HH:MM
 						span DD/MM/YYYY
@@ -25,9 +27,9 @@ block content
 									.inner-pchart.col-md-3
 										div.circle(id='#{task.id()}')
 
-							.col-md-9  
+							.col-md-9 
+								form.pull-right(action='/tasks/remove/', method='POST')
+									input(type='hidden', name='id', value=task.id())
+									button.btn.btn-u.btn-brd.rounded.btn-u-sm Remove
 								p.
 									some description of task 
-								form(action='/tasks/remove/', method='POST')
-									input(type='hidden', name='id', value=task.id())
-									button Remove

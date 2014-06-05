@@ -2,12 +2,17 @@ extends ../wrapper
 
 block content
 	.container.content
-		ul
-			li: a(href='/dashboard/') Dashboard
-			li: a(href='/tasks/') Tasks
+		.tab-v3
+			ul.nav.nav-pills.list-inline.margin-bottom-40
+				li: a(href='/dashboard/') Dashboard
+				li: a(href='/tasks/') Tasks
 
-		form(action='/tasks/create', method='POST')
-			input(type='hidden', name='type', value='simple')
-			input(type='text', name='name', placeholder='Task name')
-			button Send stuff
-
+		form.sky-form(action='/tasks/create', method='POST')
+			header Create new task
+				fieldset
+					section
+						input(type='hidden', name='type', value='simple')
+						label.input
+							input(type='text', name='name', placeholder='Task name')
+				footer
+					button.btn-u(type='submit') Submit

@@ -1,17 +1,20 @@
 extends layout
 
 block header
+	style
 
 	.container.content
 		.row
 			.col-md-8.col-md-offset-2
-				.error-v4
-					a(href='#')
-					img(src='assets/img/logo2-default.png', alt='')
-					h1
-							| #{code}
-							= error
-					span.sorry Sorry, the page you were looking for could not be found!
-					.row
-					.col-md-6.col-md-offset-3
-						a.btn-u.btn-brd.btn-brd-hover.btn-u-light(href='/dashboard/')  Go Back to Main Page
+					.error-v2
+						span.error-v2-title
+								| #{code}
+								= error
+						span That’s an error!
+						p
+							| The requested URL was not found on this server.
+							br
+							| That’s all we know.
+						.row
+							.col-md-6.col-md-offset-3
+								a.btn-u.btn-brd.btn-brd-hover.btn-u-light(href='/dashboard/')  Go Back to Main Page
