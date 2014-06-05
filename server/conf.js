@@ -1,7 +1,7 @@
 var nconf = require('nconf');
 
 module.exports = function (app) {
-	var conf = app.conf = nconf;
+	var conf = app.conf = app.locals.conf = nconf;
 
 	conf.env({
 		separator: '__',

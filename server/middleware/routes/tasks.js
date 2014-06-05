@@ -14,7 +14,9 @@ module.exports = function (app) {
 		app.api.get('requests?' + query, function (error, response, json) {
 			res.render('tasks/list', {
 				error: error,
-				tasks: Task.wrap(json)
+				tasks: Task.wrap(json).sort(function (a, b) {
+					return b.creationDate() - a.creationDate();
+				})
 			});
 		});
 	}

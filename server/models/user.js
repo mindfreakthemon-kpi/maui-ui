@@ -8,22 +8,14 @@ module.exports = function (app) {
 		.attr('id', {
 			tags: ['private']
 		})
-		.attr('name')
-		.attr('creation_date', {
-			tags: ['private']
-		})
 		.attr('role', {
 			tags: ['private']
 		})
-		.attr('password', {
-			validations: {
-				length: {
-					minimum: 5,
-					maximum: 20
-				}
-			},
+		.attr('creation_date', {
 			tags: ['private']
 		})
+		.attr('name')
+		.attr('email')
 		.attr('google_id', {
 			tags: ['accounts']
 		})
@@ -31,9 +23,6 @@ module.exports = function (app) {
 			tags: ['accounts']
 		})
 		.attr('yandex_id', {
-			tags: ['accounts']
-		})
-		.attr('ldap_id', {
 			tags: ['accounts']
 		});
 
@@ -63,7 +52,7 @@ module.exports = function (app) {
 			}
 
 			instance[providerField](id);
-			instance.update(data);
+			instance.defaults(data);
 
 			redis.set('accounts:' + provider + ':' + id, instance.id());
 

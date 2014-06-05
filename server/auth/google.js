@@ -3,17 +3,24 @@ module.exports = function (app) {
 		GoogleStrategy = require('passport-google').Strategy;
 
 	passport.use(new GoogleStrategy({
-			// defaults, must be overridden in routes
 			returnURL: 'http://localhost/auth/google/return',
 			realm: 'http://localhost',
 			passReqToCallback: true
 		},
 		function (req, identifier, profile, done) {
-			var User = app.models.user;
+			var User = app.models.user,
+				data = {
+					name: profile.displayName
+				};
 
-			User.auth(req, 'google', identifier, {
-				name: profile.displayName
-			}, done);
+			profile.emails.some(function (v) {
+				if (v.value) {
+					data.email = v.value;
+					return true;
+				}
+			});
+
+			User.auth(req, 'google', identifier, data, done);
 		}
 	));
 };

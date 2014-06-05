@@ -8,11 +8,19 @@ module.exports = function (app) {
 			passReqToCallback: true
 		},
 		function (req, accessToken, refreshToken, profile, done) {
-			var User = app.models.user;
+			var User = app.models.user,
+				data = {
+					name: profile.displayName
+				};
 
-			User.auth(req, 'yandex', profile.id, {
-				name: profile.displayName
-			}, done);
+			profile.emails.some(function (v) {
+				if (v.value) {
+					data.email = v.value;
+					return true;
+				}
+			});
+
+			User.auth(req, 'yandex', profile.id, data, done);
 		}
 	));
 };

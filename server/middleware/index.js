@@ -4,15 +4,18 @@ var express = require('express'),
 	RedisStore = require('connect-redis')(session),
 	winston = require('winston'),
 	passport = require('passport'),
-	logger = require('express-winston');
+	logger = require('express-winston'),
+	moment = require('moment'),
+	bodyParser = require('body-parser'),
+	cookieParser = require('cookie-parser');
 
 module.exports = function (app) {
 	app.use('/static', express.static('static'));
 
 	helmet.defaults(app);
 
-	app.use(require('body-parser')());
-	app.use(require('cookie-parser')(app.conf.get('cookie:secret')));
+	app.use(bodyParser());
+	app.use(cookieParser(app.conf.get('cookie:secret')));
 
 	app.use(session({
 		secret: app.conf.get('session:secret'),
@@ -32,7 +35,6 @@ module.exports = function (app) {
 	app.use(passport.session());
 
 	app.use(function (req, res, next) {
-		res.locals.conf = app.conf;
 		res.locals.user = req.user;
 		res.locals.session = req.session;
 		res.locals.request = req;

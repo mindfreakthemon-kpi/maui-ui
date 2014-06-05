@@ -107,6 +107,32 @@ function patch(redis, model, prefix) {
 			done(null, model.wrap(tasks));
 		});
 	};
+
+	model.on('model:created', function (instance) {
+		var update = instance.update;
+
+		instance.update = function (object, tags) {
+			update.call(this, object, tags);
+
+			var attrs = this.attrs;
+
+			Object.keys(attrs)
+				.forEach(function (key) {
+					if (typeof attrs[key] === 'undefined' || attrs[key] === null) {
+						delete attrs[key];
+					}
+				}, this);
+
+			return this;
+		};
+
+		instance.defaults = function (object, tags) {
+			var json = this.toJSON('*');
+
+			this.update(object, tags || '*');
+			this.update(json, '*');
+		};
+	});
 }
 
 module.exports = function (app) {

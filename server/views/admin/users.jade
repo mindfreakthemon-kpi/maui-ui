@@ -7,11 +7,11 @@ block content
 				ul
 					li Name: #{user.name()}
 					li Role: #{user.role()}
+					li Email: #{user.email()}
 					li Creation date: #{user.creationDate()}
 					li Google ID: #{user.googleId()}
 					li Yandex ID: #{user.yandexId()}
 					li Github ID: #{user.githubId()}
-					li LDAP ID: #{user.ldapId()}
 					li Remove:
 						form(action='/admin/users/remove/' + user.id(), method='GET')
 							button Remove

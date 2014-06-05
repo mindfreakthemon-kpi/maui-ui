@@ -45,15 +45,15 @@ module.exports = function (app) {
 	 */
 	app.helpers.loggedTo = function (url) {
 		return function (req, res) {
-			if (req.session && req.session.returnTo) {
-				res.redirect(req.session.returnTo);
-
-				delete req.session.returnTo;
-
+			if (!req.session || !req.session.returnTo) {
+				res.redirect(url);
 				return;
 			}
 
-			res.redirect(url);
+			var returnTo = req.session.returnTo;
+			delete req.session.returnTo;
+
+			res.redirect(returnTo);
 		};
 	};
 

@@ -18,7 +18,6 @@ module.exports = function (grunt) {
 				options: {
 					env: {
 						PORT: '80'
-
 					},
 					ignore: ['node_modules/**'],
 					watch: [
@@ -32,17 +31,15 @@ module.exports = function (grunt) {
 				options: {
 					env: {
 						PORT: '8080'
-					},
-					ignore: ['node_modules/**'],
-					watch: [
-						'server.js',
-						'server/**/*.js'
-					]
+					}
 				}
 			}
 		},
 
-		clean: ['static/css', 'static/js/templates.js'],
+		clean: [
+			'static/css',
+			'static/js/templates.js'
+		],
 
 		jade: {
 			templates: {
@@ -70,15 +67,6 @@ module.exports = function (grunt) {
 		},
 
 		watch: {
-			jshint: {
-				files: [
-					'Gruntfile.js',
-					'server.js',
-					'server/**/*.js'
-				],
-				tasks: ['jshint:main']
-			},
-
 			templates: {
 				files: ['src/jade/**/*.jade'],
 				tasks: ['jade:templates'],
@@ -103,9 +91,10 @@ module.exports = function (grunt) {
 
 		concurrent: {
 			options: {
-				logConcurrentOutput: true
+				logConcurrentOutput: true,
+				limit: 4
 			},
-			watch: {
+			client: {
 				tasks: ['watch:templates', 'watch:less', 'watch:livereload', 'nodemon:client']
 			}
 		}
@@ -121,6 +110,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('test', ['jshint']);
 	grunt.registerTask('assets', ['jade:templates', 'less:main']);
-	grunt.registerTask('devel', ['assets', 'nodemon:server']);
-	grunt.registerTask('default', ['concurrent:watch']);
+	grunt.registerTask('server', ['assets', 'nodemon:server']);
+	grunt.registerTask('default', ['concurrent:client']);
 };
