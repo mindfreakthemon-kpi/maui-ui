@@ -7,23 +7,29 @@ block content
 				li: a(href="/dashboard/") Dashboard
 				li: a(href="/tasks/create/") Create task
 
+		-function prettyDate(dateString){
+			-var date = new Date(dateString);
+			-var d = date.getDate();
+			-var m = date.getMonth();
+			-var y = date.getFullYear();
+			-var h = date.getHours();
+			-var min = date.getMinutes();
+			-return {date: d+'/'+m+'/'+y, time: h+':'+min};
+		-}
+
 		ul.timeline-v2
 			each task in tasks
 				li
 					span #{task.creation_date}
 					time.cbp_tmtime
-						span HH:MM
-						span DD/MM/YYYY
+						span #{prettyDate(task.creationDate()).time}
+						span #{prettyDate(task.creationDate()).date}
 					i.cbp_tmicon.rounded-x.hidden-xs
 					div.cbp_tmlabel
 						h2: a(href="/tasks/#{task.id()}")= task.name()
 						.row
 							.col-md-3
-								script(type="text/javascript").
-									jQuery(document).ready(function() {
-										initCircles("#{task.id()}", 100)
-									})
-								.pie-progress-charts
+								.pie-progress-charts(data-id="#{task.id()}", data-percent="100")
 									.inner-pchart.col-md-3
 										div.circle(id='#{task.id()}')
 

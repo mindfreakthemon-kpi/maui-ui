@@ -2,45 +2,49 @@ extends ../wrapper
 
 block content
 	.container.content
-		h1 Hello #{user.name()}
+		.row
+			.col-md-4.col-sm-4
+				.servive-block.servive-block-u.shadow-effect-1
+					h2 Hello #{user.name()}
+					p some info ubout user
+			.col-md-8.col-sm-8
+				#main-menu.panel-group.acc-v1
+					if user.role() === 'admin'
+						.panel.panel-default.tag-box-v1
+							.panel-heading
+								h4.panel-title
+									a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#admin-page')
+										| Admin menu
+							#admin-page.panel-collapse.collapse
+								.panel-body
+										ul
+											li: a(href='/admin/users') User list
+											li: a(href='/admin/tasks/clear') Clear tasks
+											li: a(href='/admin/config') Server config
+											li: a(href='/dashboard') Back to dashboard
 
-		#main-menu.panel-group.acc-v1
-			if user.role() === 'admin'
-				.panel.panel-default.tag-box-v1
-					.panel-heading
-						h4.panel-title
-							a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#admin-page')
-								| Admin menu
-					#admin-page.panel-collapse.collapse
-						.panel-body
-								ul
-									li: a(href='/admin/users') User list
-									li: a(href='/admin/tasks/clear') Clear tasks
-									li: a(href='/admin/config') Server config
-									li: a(href='/dashboard') Back to dashboard
-
-			.panel.panel-default.tag-box-v1
-				.panel-heading
-					h4.panel-title
-						a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#task-list')
-							| Tasks list
-				#task-list.panel-collapse.collapse
-					.panel-body
-						.row
-							.col-md-4
-								img.img-responsive(src='', alt='image')
-							.col-md-8
-								p.
-									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-								a.btn.btn-u(href='/tasks') View list
-			
-			.panel.panel-default.tag-box-v1
-				.panel-heading
-					h4.panel-title
-						a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#create-new')
-							| Add new task
-				#create-new.panel-collapse.collapse
-					.panel-body
-						p. 
-							Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Food truck quinoa nesciunt laborum eiusmodolf moon tempor, sunt aliqua put a bird. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-						a.btn.btn-u(href='/tasks/create') Create new
+					.panel.panel-default.tag-box-v1
+						.panel-heading
+							h4.panel-title
+								a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#task-list')
+									| Tasks list
+						#task-list.panel-collapse.collapse
+							.panel-body
+								.row
+									.col-md-4
+										img.img-responsive(src='', alt='image')
+									.col-md-8
+										p.
+											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+										a.btn.btn-u(href='/tasks') View list
+					
+					.panel.panel-default.tag-box-v1
+						.panel-heading
+							h4.panel-title
+								a.accordion-toggle(data-toggle='collapse', data-parent='#main-menu', href='#create-new')
+									| Add new task
+						#create-new.panel-collapse.collapse
+							.panel-body
+								p. 
+									Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Food truck quinoa nesciunt laborum eiusmodolf moon tempor, sunt aliqua put a bird. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+								a.btn.btn-u(href='/tasks/create') Create new

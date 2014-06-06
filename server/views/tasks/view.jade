@@ -13,4 +13,13 @@ block content
 				button.btn.btn-u.btn-brd.rounded.btn-u-sm Remove
 			h2 #{task.name()}
 			hr
-			p= JSON.stringify(task.toJSON('*'))
+			.row
+				.col-md-3
+					.pie-progress-charts(data-id="#{task.id()}", data-percent="100")
+						.inner-pchart.col-md-3
+							div.circle(id='#{task.id()}')
+				.col-md-9 
+					p #{task.id()}
+					p #{task.priority()}
+					p #{task.status()}
+					p #{task.userId()}
