@@ -1,0 +1,12 @@
+extends ../wrapper
+
+block content
+	.container.content
+		.row
+			.col-md-12
+				form(action='/dashboard/edit', method='POST')
+					label Name:
+						input(type='text', name='name', value=user.name())
+					label Email:
+						input(type='email', name='email', value=user.email())
+					button Poehali

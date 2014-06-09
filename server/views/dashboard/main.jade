@@ -7,6 +7,8 @@ block content
 				.servive-block.servive-block-u.shadow-effect-1
 					h2 Hello #{user.name()}
 					p some info ubout user
+					// @todo style this pls
+					h1: a(href='/dashboard/edit') (edit)
 			.col-md-8.col-sm-8
 				#main-menu.panel-group.acc-v1
 					if user.role() === 'admin'
