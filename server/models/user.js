@@ -16,6 +16,7 @@ module.exports = function (app) {
 		})
 		.attr('name')
 		.attr('email')
+		.attr('type')
 		.attr('google_id', {
 			tags: ['accounts']
 		})
@@ -31,6 +32,7 @@ module.exports = function (app) {
 	User.init = function (instance) {
 		instance.creationDate(+new Date());
 		instance.id(uuid.v4());
+		instance.type('simple');
 	};
 
 	/**

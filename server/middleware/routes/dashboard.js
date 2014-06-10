@@ -9,6 +9,7 @@ module.exports = function (app) {
 
 		user.name(payload.name);
 		user.email(payload.email);
+		user.type(payload.type);
 
 		app.models.user.save(user, function () {
 			res.redirect('.');
@@ -24,7 +25,8 @@ module.exports = function (app) {
 		.post('/edit',
 			form(
 				field('name').trim().required(),
-				field('email').trim().required()
+				field('email').trim().required(),
+				field('type').trim().required()
 			), save)
 		.all('*', app.helpers.redirect('.'));
 

@@ -9,4 +9,9 @@ block content
 						input(type='text', name='name', value=user.name())
 					label Email:
 						input(type='email', name='email', value=user.email())
-					button Poehali
+					label Type:
+						select(name='type')
+							option(value='simple', selected=user.type() === 'simple') Simple
+							option(value='normal', selected=user.type() === 'normal') Normal
+							option(value='advanced', selected=user.type() === 'advanced') Advanced
+					button Save

@@ -16,3 +16,11 @@ block content
 							input(type='text', name='name', placeholder='Task name')
 				footer
 					button.btn-u(type='submit') Submit
+		case user.type()
+			when 'advanced'
+				include create_advanced
+			when 'normal'
+				include create_normal
+			default
+				// when 'simple'
+				include create_simple

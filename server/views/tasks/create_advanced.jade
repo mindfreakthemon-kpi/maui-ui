@@ -1,0 +1,34 @@
+div advanced
+//
+	tabs: [bash - textarea(placeholder="bash code"), binary - input(type="file")]
+	h1 input arguments
+		input(type="text")
+	label list of dependencies
+		textarea(placeholder="each apt package per line")
+	label enviroment variables
+		textarea(placeholder="ENV=value per line")
+	label number of nodes
+		input(type="slider", min="1", max="500")
+	label available memory
+		input(type="range", min="1024", max=10*1024*1024) // in megabytes
+	label available processor share
+		input(type="range", min="5", max="75") // in percents
+	label available storage share
+		input(type="range", min="1024", max=10*1024*1024) // in megabytes
+	label priority
+		select
+			option emergency
+			option critical
+			option high
+			option low
+	label start from // only start processing after this datetime
+		input(type="datetime")
+	label due date // after which date task is no longer necessary
+		input(type="datetime")
+	label time out
+		input(type="slider", min="0", max="300") // in minues
+	h1 command hooks
+	label	on task start
+		textarea(placholder="bash script when task starts")
+	label on task end
+		textarea(placeholder="bash script when task ends")
