@@ -4,14 +4,21 @@ block content
 	.container.content
 		.row
 			.col-md-12
-				form(action='/dashboard/edit', method='POST')
-					label Name:
-						input(type='text', name='name', value=user.name())
-					label Email:
-						input(type='email', name='email', value=user.email())
-					label Type:
-						select(name='type')
-							option(value='simple', selected=user.type() === 'simple') Simple
-							option(value='normal', selected=user.type() === 'normal') Normal
-							option(value='advanced', selected=user.type() === 'advanced') Advanced
-					button Save
+				form.sky-form(action='/dashboard/edit', method='POST')
+					fieldset
+						section
+							label.label Name:
+							label.input 
+								input(type='text', name='name', value=user.name())
+							label.label Email:
+							label.input 
+								input(type='email', name='email', value=user.email())
+							label.label Type:
+							label.select
+								select(name='type')
+									option(value='simple', selected=user.type() === 'simple') Simple
+									option(value='normal', selected=user.type() === 'normal') Normal
+									option(value='advanced', selected=user.type() === 'advanced') Advanced
+								i
+					footer
+						button.btn-u(type='submit') Save

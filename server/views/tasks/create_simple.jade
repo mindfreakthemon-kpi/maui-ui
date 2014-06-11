@@ -1,6 +1,65 @@
-div simple
+form.sky-form(action='/tasks/create', method='POST')
+	header Create new task
+		fieldset
+			section
+				label.label Task name:
+				input(type='hidden', name='type', value='simple')
+				label.input
+					input(type='text', name='name', placeholder='Task name')
+			section
+				label.label Priority:
+				label.select
+					select(name='type')
+						option(value='high', selected=user.type() === 'high') High
+						option(value='low', selected=user.type() === 'low') Low
+					i
+			section
+				label.label
+					| Number of nodes ( 
+					span#slider2-value1 
+					|- 
+					span#slider2-value2 
+					| )
+				#slider2.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
+					.ui-slider-range.ui-widget-header.ui-corner-all
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+			section
+				label.label Time out:
+				label.select
+					select(name='type')
+						option(value='1 min', selected=user.type() === '1 min') 1 min
+						option(value='5 min', selected=user.type() === '5 min') 5 min
+						option(value='15 min', selected=user.type() === '15 min') 15 min
+						option(value='never', selected=user.type() === 'never') never
+					i
+			section
+				label.label Executable:
+				.tab-v1
+					ul.nav.nav-tabs
+						li.active
+							a(href='#home-1', data-toggle='tab') bash
+						li
+							a(href='#profile-1', data-toggle='tab') binary
+					.tab-content
+						#home-1.tab-pane.fade.active.in
+							section
+								label.label
+								label.textarea
+									textarea(rows='3' placeholder="Bash code")
+						#profile-1.tab-pane.fade
+							section
+								label.label
+								label.input.input-file(for="file")
+									.button
+										input#file(type="file" onchange="this.parentNode.nextSibling.value = this.value")
+										| Browse
+									input(type="text" readonly="")
+			footer
+				button.btn-u(type='submit') Submit
+
 //
-	tabs: [bash - textarea(placeholder="Bash code"), binary - input(type="file")]
+	tabs: [ bash - textarea(placeholder="Bash code"), binary - input(type="file")]
 	label priority
 		select
 			option high
@@ -13,5 +72,3 @@ div simple
 			option 5 min
 			option 15 min
 			option never
-
-

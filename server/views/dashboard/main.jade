@@ -6,9 +6,6 @@ block content
 			.col-md-4.col-sm-4
 				.servive-block.servive-block-u.shadow-effect-1
 					h2 Hello #{user.name()}
-					p some info ubout user
-					// @todo style this pls
-					h1: a(href='/dashboard/edit') (edit)
 			.col-md-8.col-sm-8
 				#main-menu.panel-group.acc-v1
 					if user.role() === 'admin'
@@ -32,13 +29,9 @@ block content
 									| Tasks list
 						#task-list.panel-collapse.collapse
 							.panel-body
-								.row
-									.col-md-4
-										img.img-responsive(src='', alt='image')
-									.col-md-8
-										p.
-											Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-										a.btn.btn-u(href='/tasks') View list
+								p.
+									Here you can view full list of your tasks.
+								a.btn.btn-u(href='/tasks') View list
 					
 					.panel.panel-default.tag-box-v1
 						.panel-heading
@@ -48,5 +41,5 @@ block content
 						#create-new.panel-collapse.collapse
 							.panel-body
 								p. 
-									Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Food truck quinoa nesciunt laborum eiusmodolf moon tempor, sunt aliqua put a bird. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									Here you can create new task
 								a.btn.btn-u(href='/tasks/create') Create new

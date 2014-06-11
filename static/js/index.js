@@ -11,8 +11,20 @@ function initCircles(circle_id, percent) {
 	});
 }
 
+
+
 jQuery(document).ready(function() {
 	$('.pie-progress-charts').each(function() {
 		initCircles($(this).data('id'), $(this).data('percent'));
 	})
+	$('#slider2').slider({
+		min: 0,
+		max: 100,
+		range: true,
+		values: [15, 65],
+		slide: function(event, ui) {
+			$('#slider2-value1').text(ui.values[0]);
+			$('#slider2-value2').text(ui.values[1]);
+		}
+	});
 })

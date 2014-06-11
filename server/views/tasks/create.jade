@@ -7,20 +7,10 @@ block content
 				li: a(href='/dashboard/') Dashboard
 				li: a(href='/tasks/') Tasks
 
-		form.sky-form(action='/tasks/create', method='POST')
-			header Create new task
-				fieldset
-					section
-						input(type='hidden', name='type', value='simple')
-						label.input
-							input(type='text', name='name', placeholder='Task name')
-				footer
-					button.btn-u(type='submit') Submit
 		case user.type()
 			when 'advanced'
 				include create_advanced
 			when 'normal'
 				include create_normal
 			default
-				// when 'simple'
 				include create_simple
