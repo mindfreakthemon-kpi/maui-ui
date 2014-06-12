@@ -12,6 +12,29 @@ module.exports = function (app) {
 		});
 
 		app.api.get('requests?' + query, function (error, response, json) {
+			if (error === true) {
+				// is offline
+				error = null;
+				json = [
+					{
+						"id": "1c1b412f-710c-4054-8cdd-8c8ea4935e2a",
+						"name": "bigN",
+						"priority": 41,
+						"status": "CREATED",
+						"user_id": "drew",
+						"creation_date": 1401653177162
+					},
+					{
+						"id": "671138a5-1914-4226-82ca-5da5ecfa3651",
+						"name": "requestnot1",
+						"priority": 41,
+						"status": "CREATED",
+						"user_id": "drew",
+						"creation_date": 1401652026333
+					}
+				];
+			}
+
 			if (error) {
 				next(error);
 				return;
