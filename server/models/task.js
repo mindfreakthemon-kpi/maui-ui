@@ -10,7 +10,19 @@ module.exports = function (app) {
 		.attr('creation_date')
 		.attr('description')
 		.attr('percent_complete')
-		.attr('number_of_nodes');
+		.attr('number_of_nodes')
+		.attr('input_arguments')
+		.attr('dependencies')
+		.attr('env')
+		.attr('processor')
+		.attr('memory')
+		.attr('storage')
+		.attr('timeout')
+		.attr('bash') // or file
+		.attr('file_url') // or bash
+		.attr('hook_start')
+		.attr('hook_end');
+
 
 	model.patch(Task, 'tasks');
 

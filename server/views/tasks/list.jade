@@ -40,3 +40,27 @@ block content
 									button.btn.btn-u.btn-brd.rounded.btn-u-sm Remove
 								p.
 									Number of nodes: #{task.numberOfNodes()}
+								p.
+									input arguments: #{task.inputArguments()}
+								p.
+									dependencies: #{task.dependencies()}
+								p.
+									env: #{task.env()}
+								p.
+									processor: #{task.processor()}
+								p.
+									memory: #{task.memory()}
+								p.
+									storage: #{task.storage()}
+								p.
+									timeout: #{task.timeout()}
+								if task.bash()
+									p.
+										bash: #{task.bash()}
+								if task.fileUrl()
+									p.
+										file url: #{task.fileUrl()}
+								p.
+									hook start: #{task.hookStart()}
+								p.
+									hook end: #{task.hookEnd()}

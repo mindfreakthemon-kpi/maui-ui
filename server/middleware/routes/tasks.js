@@ -25,7 +25,18 @@ module.exports = function (app) {
 						"creation_date": 1401653172434,
 						"description": "sfg sefg sdhs srtg1",
 						"percent_complete": 100,
-						"number_of_nodes": 34
+						"number_of_nodes": 34,
+						"input_arguments": "-p --off",
+						"dependencies": "mysql\napache",
+						"env": "ENV=PROD",
+						"processor": 20,
+						"memory": 300,
+						"storage": 4000,
+						"timeout": 30,
+						"bash": "",
+						"file_url": "storage://1c1b412f-710c-4054-8cdd-8c8ea4935e2a.bin",
+						"hook_start": "echo 'Start'",
+						"hook_end": "echo 'End'"
 					},
 					{
 						"id": "671138a5-1914-4226-82ca-5da5ecfa3651",
@@ -36,7 +47,18 @@ module.exports = function (app) {
 						"creation_date": 1402652026333,
 						"description": "sfg sefg sdhs srtg2",
 						"percent_complete": 79,
-						"number_of_nodes": 12
+						"number_of_nodes": 12,
+						"input_arguments": "--amend -z",
+						"dependencies": "utilities\nperl\nperl-parser",
+						"env": "XARGV=1\nDISPLAY=0:0",
+						"processor": 14,
+						"memory": 2048,
+						"storage": 4096,
+						"timeout": 15,
+						"bash": "",
+						"file_url": "storage://671138a5-1914-4226-82ca-5da5ecfa3651.bin",
+						"hook_start": "echo 'Start'",
+						"hook_end": "echo 'End'"
 					},
 					{
 						"id": "671138a5-1914-4226-82ca-5da5ecfa1651",
@@ -47,7 +69,18 @@ module.exports = function (app) {
 						"creation_date": 1403652026933,
 						"description": "sfg sefg sdhs srtg3",
 						"percent_complete": 0,
-						"number_of_nodes": 231
+						"number_of_nodes": 231,
+						"input_arguments": "-x --apply-only-stuff",
+						"dependencies": "bind\npython",
+						"env": "BINDVER=9",
+						"processor": 10,
+						"memory": 100,
+						"storage": 200,
+						"timeout": 10,
+						"bash": "",
+						"file_url": "storage://671138a5-1914-4226-82ca-5da5ecfa1651.bin",
+						"hook_start": "echo 'Start'",
+						"hook_end": "echo 'End'"
 					}
 				];
 			}
