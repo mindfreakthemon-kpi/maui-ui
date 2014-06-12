@@ -18,19 +18,36 @@ module.exports = function (app) {
 				json = [
 					{
 						"id": "1c1b412f-710c-4054-8cdd-8c8ea4935e2a",
-						"name": "bigN",
+						"name": "Task 1",
 						"priority": 41,
-						"status": "CREATED",
+						"status": "COMPLETE",
 						"user_id": "drew",
-						"creation_date": 1401653177162
+						"creation_date": 1401653172434,
+						"description": "sfg sefg sdhs srtg1",
+						"percent_complete": 100,
+						"number_of_nodes": 34
 					},
 					{
 						"id": "671138a5-1914-4226-82ca-5da5ecfa3651",
-						"name": "requestnot1",
+						"name": "Task 2",
+						"priority": 41,
+						"status": "PROCESSING",
+						"user_id": "drew",
+						"creation_date": 1402652026333,
+						"description": "sfg sefg sdhs srtg2",
+						"percent_complete": 79,
+						"number_of_nodes": 12
+					},
+					{
+						"id": "671138a5-1914-4226-82ca-5da5ecfa1651",
+						"name": "Task 3",
 						"priority": 41,
 						"status": "CREATED",
 						"user_id": "drew",
-						"creation_date": 1401652026333
+						"creation_date": 1403652026933,
+						"description": "sfg sefg sdhs srtg3",
+						"percent_complete": 0,
+						"number_of_nodes": 231
 					}
 				];
 			}

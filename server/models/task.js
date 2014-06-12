@@ -7,7 +7,10 @@ module.exports = function (app) {
 		.attr('priority')
 		.attr('status')
 		.attr('user_id')
-		.attr('creation_date');
+		.attr('creation_date')
+		.attr('description')
+		.attr('percent_complete')
+		.attr('number_of_nodes');
 
 	model.patch(Task, 'tasks');
 

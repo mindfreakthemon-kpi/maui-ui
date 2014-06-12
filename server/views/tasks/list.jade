@@ -29,13 +29,14 @@ block content
 						h2: a(href="/tasks/#{task.id()}")= task.name()
 						.row
 							.col-md-3
-								.pie-progress-charts(data-id="#{task.id()}", data-percent="100")
+								.pie-progress-charts(data-id="#{task.id()}", data-percent="#{task.percentComplete()}")
 									.inner-pchart.col-md-3
 										div.circle(id='#{task.id()}')
+										p #{task.status()}
 
 							.col-md-9 
 								form.pull-right(action='/tasks/remove/', method='POST')
 									input(type='hidden', name='id', value=task.id())
 									button.btn.btn-u.btn-brd.rounded.btn-u-sm Remove
 								p.
-									some description of task 
+									Number of nodes: #{task.numberOfNodes()}
