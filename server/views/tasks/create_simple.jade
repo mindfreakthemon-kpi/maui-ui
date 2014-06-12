@@ -3,9 +3,8 @@ form.sky-form(action='/tasks/create', method='POST')
 		fieldset
 			section
 				label.label Task name:
-				input(type='hidden', name='type', value='simple')
 				label.input
-					input(type='text', name='name', placeholder='Task name')
+					input(type='text', placeholder='Task name')
 			section
 				label.label Priority:
 				label.select
@@ -15,14 +14,10 @@ form.sky-form(action='/tasks/create', method='POST')
 					i
 			section
 				label.label
-					| Number of nodes ( 
-					span#slider2-value1 
-					|- 
-					span#slider2-value2 
-					| )
-				#slider2.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
+					| Number of nodes: 
+					span#number-of-nodes-value
+				#number-of-nodes.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
 					.ui-slider-range.ui-widget-header.ui-corner-all
-					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
 					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
 			section
 				label.label Time out:
@@ -58,17 +53,3 @@ form.sky-form(action='/tasks/create', method='POST')
 			footer
 				button.btn-u(type='submit') Submit
 
-//
-	tabs: [ bash - textarea(placeholder="Bash code"), binary - input(type="file")]
-	label priority
-		select
-			option high
-			option low
-	label number of nodes
-		input(type="slider", min="1", max="100")
-	label time out
-		select
-			option 1 min
-			option 5 min
-			option 15 min
-			option never

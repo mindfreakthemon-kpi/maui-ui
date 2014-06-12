@@ -1,36 +1,96 @@
-div normal
-		form.sky-form(action='/tasks/create', method='POST')
-			header Create new task
-				fieldset
-					section
-						input(type='hidden', name='type', value='simple')
-						label.input
-							input(type='text', name='name', placeholder='Task name')
-				footer
-					button.btn-u(type='submit') Submit
+form.sky-form(action='/tasks/create', method='POST')
+	header Create new task
+		fieldset
+			section
+				label.label Task name:
+				label.input
+					input(type='text', placeholder='Task name')
+			section
+				label.label Input arguments:
+				label.input
+					input(type='text')
+			section
+				label.label
+					| Number of nodes: 
+					span#number-of-nodes-value
+				#number-of-nodes.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
+					.ui-slider-range.ui-widget-header.ui-corner-all
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+			section
+				label.label Priority:
+				label.select
+					select(name='type')
+						option(value='critical', selected=user.type() === 'critical') Critical
+						option(value='high', selected=user.type() === 'high') High
+						option(value='low', selected=user.type() === 'low') Low
+					i
+			section
+				label.label
+					| Available processor share (%):  
+					span#available-processor-share-value1 
+					|- 
+					span#available-processor-share-value2 
+				#available-processor-share.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
+					.ui-slider-range.ui-widget-header.ui-corner-all
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+			section
+				label.label
+					| Available memory (Mb):  
+					span#available-memory-value1 
+					|- 
+					span#available-memory-value2 
+				#available-memory.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
+					.ui-slider-range.ui-widget-header.ui-corner-all
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+			section
+				label.label
+					| Available storage share (Mb):  
+					span#available-storage-share-value1 
+					|- 
+					span#available-storage-share-value2 
+				#available-storage-share.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
+					.ui-slider-range.ui-widget-header.ui-corner-all
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+			section
+				label.label
+					| Time out (min):  
+					span#time-out-value1 
+					|- 
+					span#time-out-value2 
+				#time-out.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(aria-disabled="false")
+					.ui-slider-range.ui-widget-header.ui-corner-all
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+					a.ui-slider-handle.ui-state-default.ui-corner-all(href="#")
+			section
+				label.label Executable:
+				.tab-v1
+					ul.nav.nav-tabs
+						li.active
+							a(href='#home-1', data-toggle='tab') bash
+						li
+							a(href='#profile-1', data-toggle='tab') binary
+					.tab-content
+						#home-1.tab-pane.fade.active.in
+							section
+								label.label
+								label.textarea
+									textarea(rows='3' placeholder="Bash code")
+						#profile-1.tab-pane.fade
+							section
+								label.label
+								label.input.input-file(for="file")
+									.button
+										input#file(type="file" onchange="this.parentNode.nextSibling.value = this.value")
+										| Browse
+									input(type="text" readonly="")
+			footer
+				button.btn-u(type='submit') Submit
 //
-	tabs: [bash - textarea(placeholder="Bash code"), binary - input(type="file")]
-	h1 input arguments
-		input(type="text")
-	label number of nodes
-		input(type="slider", min="1", max="100")
-	label available memory
-		input(type="range", min="1024", max=1024*1024) // in megabytes
-	label available processor share
-		input(type="range", min="5", max="25") // in percents
-	label available storage share
-		input(type="range", min="1024", max=1024*1024) // in megabytes
-	label priority
-		select
-			option critical
-			option high
-			option low
+
 	label due date // after which date task is no longer necessary
 		input(type="datetime")
-	label time out
-		input(type="slider", min="0", max="300") // in minues
-
-
-
 
 
