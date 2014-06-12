@@ -6,14 +6,18 @@ var express = require('express'),
 module.exports = function (app) {
 	var Task = app.models.task;
 
-	function list(req, res) {
+	function list(req, res, next) {
 		var query = querystring.stringify({
 			user_id: req.user.id()
 		});
 
 		app.api.get('requests?' + query, function (error, response, json) {
+			if (error) {
+				next(error);
+				return;
+			}
+
 			res.render('tasks/list', {
-				error: error,
 				tasks: Task.wrap(json).sort(function (a, b) {
 					return b.creationDate() - a.creationDate();
 				})
@@ -21,12 +25,17 @@ module.exports = function (app) {
 		});
 	}
 
-	function view(req, res) {
+	function view(req, res, next) {
 		var query = querystring.stringify({
 			id: req.params.id
 		});
 
 		app.api.get('requests?' + query, function (error, response, json) {
+			if (error) {
+				next(error);
+				return;
+			}
+
 			var tasks = Task.wrap(json);
 
 			res.render('tasks/view', {
