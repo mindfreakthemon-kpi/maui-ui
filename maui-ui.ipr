@@ -244,6 +244,7 @@
         <w>attrs</w>
         <w>github</w>
         <w>newrelic</w>
+        <w>nock</w>
         <w>whitelist</w>
         <w>yandex</w>
       </words>

@@ -1,4 +1,6 @@
-var nconf = require('nconf');
+var nconf = require('nconf'),
+	events = require('events'),
+	util = require('util');
 
 module.exports = function (app) {
 	var conf = app.conf = app.locals.conf = nconf;
@@ -49,4 +51,20 @@ module.exports = function (app) {
 			}
 		}
 	});
+
+	/* Event emitting for nconf */
+	util._extend(conf, events.EventEmitter.prototype);
+
+	var _set = conf.set;
+
+	conf.set = function () {
+		var args = Array.prototype.slice.call(arguments, 0);
+
+		_set.apply(this, args);
+
+		// (propName, value)
+		this.emit.apply(this, ['set'].concat(args));
+		// (value)
+		this.emit.apply(this, ['set:' + args.shift()].concat(args));
+	};
 };

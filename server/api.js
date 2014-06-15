@@ -1,9 +1,9 @@
-var request = require('request');
+var nock = require('nock'),
+	request = require('request');
 
 module.exports = function (app) {
 	function api(method, path) {
-		var offline = app.conf.get('backend:offline'),
-			endpoint = app.conf.get('backend:endpoint'),
+		var endpoint = app.conf.get('backend:endpoint'),
 			callback,
 			json = true;
 
@@ -18,7 +18,7 @@ module.exports = function (app) {
 			callback = arguments[3];
 		}
 
-		if (offline || !endpoint) {
+		if (!endpoint) {
 			callback(true);
 			return;
 		}

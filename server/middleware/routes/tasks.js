@@ -12,79 +12,6 @@ module.exports = function (app) {
 		});
 
 		app.api.get('requests?' + query, function (error, response, json) {
-			if (error === true) {
-				// is offline
-				error = null;
-				json = [
-					{
-						"id": "1c1b412f-710c-4054-8cdd-8c8ea4935e2a",
-						"name": "Task 1",
-						"priority": 41,
-						"status": "COMPLETE",
-						"user_id": "drew",
-						"creation_date": 1401653172434,
-						"description": "sfg sefg sdhs srtg1",
-						"percent_complete": 100,
-						"number_of_nodes": 34,
-						"input_arguments": "-p --off",
-						"dependencies": "mysql\napache",
-						"env": "ENV=PROD",
-						"processor": 20,
-						"memory": 300,
-						"storage": 4000,
-						"timeout": 30,
-						"bash": "",
-						"file_url": "storage://1c1b412f-710c-4054-8cdd-8c8ea4935e2a.bin",
-						"hook_start": "echo 'Start'",
-						"hook_end": "echo 'End'"
-					},
-					{
-						"id": "671138a5-1914-4226-82ca-5da5ecfa3651",
-						"name": "Task 2",
-						"priority": 41,
-						"status": "PROCESSING",
-						"user_id": "drew",
-						"creation_date": 1402652026333,
-						"description": "sfg sefg sdhs srtg2",
-						"percent_complete": 79,
-						"number_of_nodes": 12,
-						"input_arguments": "--amend -z",
-						"dependencies": "utilities\nperl\nperl-parser",
-						"env": "XARGV=1\nDISPLAY=0:0",
-						"processor": 14,
-						"memory": 2048,
-						"storage": 4096,
-						"timeout": 15,
-						"bash": "",
-						"file_url": "storage://671138a5-1914-4226-82ca-5da5ecfa3651.bin",
-						"hook_start": "echo 'Start'",
-						"hook_end": "echo 'End'"
-					},
-					{
-						"id": "671138a5-1914-4226-82ca-5da5ecfa1651",
-						"name": "Task 3",
-						"priority": 41,
-						"status": "CREATED",
-						"user_id": "drew",
-						"creation_date": 1403652026933,
-						"description": "sfg sefg sdhs srtg3",
-						"percent_complete": 0,
-						"number_of_nodes": 231,
-						"input_arguments": "-x --apply-only-stuff",
-						"dependencies": "bind\npython",
-						"env": "BINDVER=9",
-						"processor": 10,
-						"memory": 100,
-						"storage": 200,
-						"timeout": 10,
-						"bash": "",
-						"file_url": "storage://671138a5-1914-4226-82ca-5da5ecfa1651.bin",
-						"hook_start": "echo 'Start'",
-						"hook_end": "echo 'End'"
-					}
-				];
-			}
-
 			if (error) {
 				next(error);
 				return;
@@ -121,9 +48,23 @@ module.exports = function (app) {
 	function create(req, res) {
 		app.api.post('request', {
 			request: {
-				name: req.body.name,
 				user_id: req.user.id(),
-				type: 'simple'
+				type: 'simple',
+				name: req.form.name,
+				priority: req.form.priority,
+				description: req.form.description,
+				number_of_nodes: req.form.number_of_nodes,
+				input_arguments: req.form.input_arguments,
+				dependencies: req.form.dependencies,
+				env: req.form.env,
+				processor: req.form.processor,
+				memory: req.form.memory,
+				storage: req.form.storage,
+				timeout: req.form.timeout,
+				bash: req.form.bash,
+				file_url: req.form.file_url,
+				hook_start: req.form.hook_start,
+				hook_end: req.form.hook_end
 			}
 		},
 		function (error, response, json) {
@@ -154,7 +95,21 @@ module.exports = function (app) {
 		.get('/create', app.helpers.render('tasks/create'))
 		.post('/create',
 			form(
-				field('name').trim().required()
+				field('name').trim().required(),
+				field('priority').trim().required(),
+				field('description').trim().required(),
+				field('number_of_nodes').trim().required(),
+				field('input_arguments').trim(),
+				field('dependencies').trim(),
+				field('env').trim(),
+				field('processor').trim().required(),
+				field('memory').trim().required(),
+				field('storage').trim().required(),
+				field('timeout').trim().required(),
+				field('bash').trim(),
+				field('file_url').trim(),
+				field('hook_start').trim(),
+				field('hook_end').trim()
 			), create)
 		.post('/remove', remove)
 		.get('/:id', view);

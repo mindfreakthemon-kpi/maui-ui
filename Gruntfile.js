@@ -13,6 +13,9 @@ module.exports = function (grunt) {
 		},
 
 		nodemon: {
+			options: {
+				callback: function () {}
+			},
 			server: {
 				script: 'server.js',
 				options: {
