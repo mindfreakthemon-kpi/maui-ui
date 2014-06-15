@@ -5,11 +5,11 @@ form.sky-form(action='/tasks/create', method='POST')
 			section
 				label.label Task name:
 				label.input
-					input(type='text', placeholder='Task name')
+					input(name='name', type='text', placeholder='Task name')
 			section
 				label.label Input arguments:
 				label.input
-					input(type='text')
+					input(name='input_arguments', type='text')
 			section
 				label.label
 					| Number of nodes: 
@@ -20,7 +20,7 @@ form.sky-form(action='/tasks/create', method='POST')
 			section
 				label.label Priority:
 				label.select
-					select(name='type')
+					select(name='priority')
 						option(value='critical', selected=user.type() === 'critical') Critical
 						option(value='high', selected=user.type() === 'high') High
 						option(value='low', selected=user.type() === 'low') Low
@@ -78,15 +78,15 @@ form.sky-form(action='/tasks/create', method='POST')
 							section
 								label.label
 								label.textarea
-									textarea(rows='3' placeholder="Bash code")
+									textarea(name='bash', rows='3', placeholder="Bash code")
 						#profile-1.tab-pane.fade
 							section
 								label.label
 								label.input.input-file(for="file")
 									.button
-										input#file(type="file" onchange="this.parentNode.nextSibling.value = this.value")
+										input#file(name='file_url', type="file", onchange="this.parentNode.nextSibling.value = this.value")
 										| Browse
-									input(type="text" readonly="")
+									input(type="text", readonly="")
 			footer
 				button.btn-u(type='submit') Submit
 //

@@ -5,19 +5,19 @@ form.sky-form(action='/tasks/create', method='POST')
 			section
 				label.label Task name:
 				label.input
-					input(type='text', placeholder='Task name')
+					input(name='name', type='text', placeholder='Task name')
 			section
 				label.label Input arguments:
 				label.input
-					input(type='text')
+					input(name='input_arguments', type='text')
 			section
 				label.label List of dependencies
 				label.textarea
-					textarea(rows='3' placeholder="Each apt package per line")
+					textarea(name='dependencies', rows='3', placeholder="Each apt package per line")
 			section
 				label.label Enviroment variables
 				label.textarea
-					textarea(rows='3' placeholder="ENV=value per line")
+					textarea(name='envs', rows='3', placeholder="ENV=value per line")
 			section
 				label.label
 					| Number of nodes: 
@@ -28,7 +28,7 @@ form.sky-form(action='/tasks/create', method='POST')
 			section
 				label.label Priority:
 				label.select
-					select(name='type')
+					select(name='priority')
 						option(value='emergency', selected=user.type() === 'emergency') Emergency
 						option(value='critical', selected=user.type() === 'critical') Critical
 						option(value='high', selected=user.type() === 'high') High
@@ -87,23 +87,23 @@ form.sky-form(action='/tasks/create', method='POST')
 							section
 								label.label
 								label.textarea
-									textarea(rows='3' placeholder="Bash code")
+									textarea(name='bash', rows='3', placeholder="Bash code")
 						#profile-1.tab-pane.fade
 							section
 								label.label
 								label.input.input-file(for="file")
 									.button
-										input#file(type="file" onchange="this.parentNode.nextSibling.value = this.value")
+										input#file(name='file_url', type="file", onchange="this.parentNode.nextSibling.value = this.value")
 										| Browse
-									input(type="text" readonly="")
+									input(type="text", readonly="")
 			section
 				h1 Command hooks
 				label.label On task start:
 				label.textarea
-					textarea(rows='3' placeholder="Bash script when task starts")
+					textarea(name='hook_start', rows='3', placeholder="Bash script when task starts")
 				label.label On task end:
 				label.textarea
-					textarea(rows='3' placeholder="Bash script when task ends")
+					textarea(name='hook_end', rows='3', placeholder="Bash script when task ends")
 			footer
 				button.btn-u(type='submit') Submit
 //
