@@ -29,38 +29,44 @@ block content
 						h2: a(href="/tasks/#{task.id()}")= task.name()
 						.row
 							.col-md-3
-								.pie-progress-charts(data-id="#{task.id()}", data-percent="#{task.percentComplete()}")
-									.inner-pchart.col-md-3
+								.pie-progress-charts(data-id="#{task.id()}", data-percent="#{task.percentComplete() | 0}")
+									.inner-pchart
 										div.circle(id='#{task.id()}')
-										p #{task.status()}
+										p.text-center STATUS = #{task.status()}
 
 							.col-md-9 
 								form.pull-right(action='/tasks/remove/', method='POST')
 									input(type='hidden', name='id', value=task.id())
 									button.btn.btn-u.btn-brd.rounded.btn-u-sm Remove
 								p.
-									Number of nodes: #{task.numberOfNodes()}
+									Number of nodes: #{task.numberOfNodes() || '1'}
+								if task.inputArguments()
+									p.
+										input arguments: #{task.inputArguments()}
+								if task.dependencies()
+									p.
+										dependencies: #{task.dependencies()}
+								if task.env()
+									p.
+										env: #{task.env()}
 								p.
-									input arguments: #{task.inputArguments()}
+									processor: #{task.processor() || '25'}%
 								p.
-									dependencies: #{task.dependencies()}
+									memory: #{task.memory() || '1024'} mb
 								p.
-									env: #{task.env()}
-								p.
-									processor: #{task.processor()}
-								p.
-									memory: #{task.memory()}
-								p.
-									storage: #{task.storage()}
-								p.
-									timeout: #{task.timeout()}
+									storage: #{task.storage() || '4096'} mb
+								if task.timeout()
+									p.
+										timeout: #{task.timeout()}
 								if task.bash()
 									p.
 										bash: #{task.bash()}
 								if task.fileUrl()
 									p.
 										file url: #{task.fileUrl()}
-								p.
-									hook start: #{task.hookStart()}
-								p.
-									hook end: #{task.hookEnd()}
+								if task.hookStart()
+									p.
+										hook start: #{task.hookStart()}
+								if task.hookEnd()
+									p.
+										hook end: #{task.hookEnd()}
