@@ -260,6 +260,9 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="VagrantProjectSettings">
+    <option name="instanceFolder" value="$PROJECT_DIR$" />
+  </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
   </component>
