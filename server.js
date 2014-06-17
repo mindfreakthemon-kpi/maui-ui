@@ -1,5 +1,4 @@
-var app = require('express')(),
-	nconf = require('nconf');
+var app = require('express')();
 
 require('./server/require')(app);
 
@@ -17,4 +16,4 @@ app.require('./server/middleware');
 app.require('./server/nock');
 app.require('./server/api');
 
-app.listen(process.env.PORT || 80);
+app.listen(process.env.PORT || app.conf.get('port'));

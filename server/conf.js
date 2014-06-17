@@ -25,6 +25,7 @@ module.exports = function (app) {
 	conf.loadFilesSync();
 
 	conf.defaults({
+		port: 80,
 		admin: {
 			key: null
 		},
