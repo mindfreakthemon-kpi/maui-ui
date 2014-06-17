@@ -102,7 +102,6 @@
   </component>
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{maui-ui node_modules}" />
-    <file url="PROJECT" libraries="{Node.js v0.10.28 Core Modules}" />
   </component>
   <component name="ProjectCodeStyleSettingsManager">
     <option name="PER_PROJECT_SETTINGS">

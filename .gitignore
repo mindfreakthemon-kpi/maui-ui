@@ -34,3 +34,6 @@ static/js/templates.js
 
 # JSON Config
 config.json
+
+# Vagrant stuff
+.vagrant
