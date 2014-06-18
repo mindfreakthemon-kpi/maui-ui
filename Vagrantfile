@@ -1,10 +1,11 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "chef/ubuntu-14.04"
+  #config.vm.box = "chef/ubuntu-14.04"
+  config.vm.box = "hashicorp/precise32"
 
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.network "forwarded_port", guest: 8080, host: 8081
 
   config.vm.provider "virtualbox" do |vb|
-     vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "2", "--cpuexecutioncap", "100"]
+     vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "1", "--cpuexecutioncap", "100"]
   end
 
   config.vm.provision "shell", path: "puppet/bootstrap.sh"
