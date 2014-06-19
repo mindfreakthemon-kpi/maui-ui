@@ -25,7 +25,7 @@ module.exports = function (app) {
 	conf.loadFilesSync();
 
 	conf.defaults({
-		port: 80,
+		port: 8080,
 		admin: {
 			key: null
 		},
@@ -39,16 +39,16 @@ module.exports = function (app) {
 		},
 		backend: {
 			endpoint: '',
-			offline: false
+			offline: true
 		},
 		passport: {
 			yandex: {
-				client_id: '',
-				client_secret: ''
+				client_id: 'undefined',
+				client_secret: 'undefined'
 			},
 			github: {
-				client_id: '',
-				client_secret: ''
+				client_id: 'undefined',
+				client_secret: 'undefined'
 			}
 		}
 	});
