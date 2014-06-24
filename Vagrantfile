@@ -8,13 +8,13 @@ Vagrant.configure("2") do |config|
      vb.customize ["modifyvm", :id, "--memory", "2048", "--cpus", "1", "--cpuexecutioncap", "100"]
   end
 
-  config.vm.provision "shell", path: "puppet/bootstrap.sh"
+  #config.vm.provision "shell", inline: "/usr/bin/apt-get update"
+
+  #config.vm.provision "shell", inline: "/usr/bin/apt-get install -qq puppet"
 
   config.vm.provision "puppet" do |puppet|
     puppet.manifests_path = "puppet/manifests"
     puppet.manifest_file = "maui-ui.pp"
     puppet.module_path = "puppet/modules"
   end
-
-  config.vm.provision "shell", path: "puppet/kickoff.sh"
 end

@@ -1,0 +1,88 @@
+#!/bin/sh
+#
+# GRUNT - this script starts and stops the GRUNT-server daemon
+#
+# chkconfig:   - 85 15
+# description:  GRUNT is a persistent key-value database
+# processname: GRUNT-server
+# pidfile:     /var/run/GRUNT.pid
+
+# Source function library.
+. /lib/lsb/init-functions
+
+NODEJS_HOME=/usr/local/node/node-default
+
+if [ -d "$NODEJS_HOME/bin" ] ; then
+  export PATH="$NODEJS_HOME/bin:$PATH"
+fi
+
+GRUNT_EXEC=`which grunt`
+GRUNT_NAME="grunt-server"
+GRUNT_PID="/var/run/grunt-server.pid"
+GRUNT_LOCKFILE="/var/lock/grunt-server"
+GRUNT_CHDIR="/vagrant"
+
+[ -x "$GRUNT_EXEC" ] || exit 5
+
+start() {
+    local retval
+
+    log_daemon_msg "Starting $GRUNT_NAME"
+    start-stop-daemon --start --background --quiet --chdir "$GRUNT_CHDIR" --pidfile "$GRUNT_PID" --retry 5 --exec "$GRUNT_EXEC" --oknodo -- server
+
+    retval=$?
+    log_end_msg $retval
+    [ $retval -eq 0 ] && touch "$GRUNT_LOCKFILE"
+
+    return $retval
+}
+
+stop() {
+    local retval
+
+    log_daemon_msg "Stopping $GRUNT_NAME"
+    start-stop-daemon --stop --quiet --signal QUIT --pidfile "$GRUNT_PID" --retry 5 --oknodo --exec "$GRUNT_EXEC"
+
+    retval=$?
+    log_end_msg $retval
+    [ $retval -eq 0 ] && rm -f "$GRUNT_LOCKFILE"
+
+    return $retval
+}
+
+restart() {
+    stop
+    sleep 1
+    start
+}
+
+status() {
+    local retval
+    status_of_proc -p "$GRUNT_PID" "$GRUNT_EXEC" "$GRUNT_NAME"
+    retval=$?
+    return $retval
+}
+
+status_q() {
+    status >/dev/null 2>&1
+}
+
+case "$1" in
+    start)
+        status_q && exit 0
+        start
+        ;;
+    stop)
+        status_q || exit 0
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    status)
+        status
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|status|restart}"
+        exit 2
+esac
